@@ -1,0 +1,13 @@
+{% extends "articles/base.html" %}
+{% load django_bootstrap5 %}
+{%load static%}
+
+{% block main %}
+  
+  <form method = 'post'>
+  {% csrf_token %} 
+  {{ form.as_p }}
+  <input type="submit" value = 'send' class = 'btn btn-info'>
+  </form>
+
+{% endblock %}

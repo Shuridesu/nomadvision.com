@@ -1,0 +1,117 @@
+{% load django_bootstrap5 %}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" type = "text/css" href="{% static 'articles/style.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-white py-4">
+      
+        <div class="container">
+          <a class="navbar-brand pt-1 pe-2" href="/">Nomad Vision</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              
+              
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Trends
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">AI</a></li>
+                  <li><a class="dropdown-item" href="#">Data</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Analytics
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Industry Insights</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Tools & Resoources
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">AI Software</a></li>
+                  
+                </ul>
+              </li>
+              
+              <div class="about_us">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  </a>
+                  <ul class="dropdown-menu mt-4">
+                    <li><a class="dropdown-item" href="{% url 'about' %}">About us</a></li>
+                    <li><a class="dropdown-item" href="{% url 'privacy' %}">Privacy Policy</a></li>
+                    <li><a class="dropdown-item" href="{% url 'terms' %}">Terms & Condition</a></li>
+                  </ul>
+                  
+                </li>
+              </div>
+  
+              
+              
+                <form class="d-flex" role="search">
+                  <input class="form-control ms-4" type="search" placeholder="Search" aria-label="Search">
+                </form>
+  
+                <button class = "btn btn-primary ms-4">join us</button>
+              
+                
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    {% block main %}
+    {% endblock %}
+
+    <!--Footer section-->
+   <footer>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <hr class = "mb-4">
+          <div class="col-md-4">
+            <h1 class ="pb-2">No mad vision</h1>
+            <h5 class = "mt-4">The Official Innovative Source
+              <br>
+               For AI and Business</h5>
+            <p>© Nomad Vision 2023</p>
+          </div>
+          
+          
+          <div class="footer_btn col-md-4 ms-auto">
+            <a href="#" class = "me-4">
+              sign up
+            </a>
+            <a href="#">
+              contact us
+            </a>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+   </footer>
+
+</body>
+</html>

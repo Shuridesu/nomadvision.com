@@ -1,0 +1,269 @@
+{% extends "articles/base.html" %}
+
+{% load django_bootstrap5 %}
+{%load static%}
+
+
+{% block main %}
+<div class="section">
+    <div class="article">
+        <dIv class="container">
+            <div class="row">
+                <!--title left-->
+                <div class="col-lg-6 text-center">
+                    {% if post.title_image %}
+                    <img src="{{ post.title_image.url }}" alt="{{ post.title }}" class="title-img" />
+                    {% endif %}
+                </div>
+
+                <!--title right-->
+                <div class="col-lg-6 pe-4">
+                    <div class="title">
+                        {% if post.title %}
+                    <h1>{{post.title}}</h1>
+                    {% endif %}
+                    {% if post.subtitle %}
+                    <p class = "mt-4">{{post.subtitle}}</p>
+                    {% endif %}
+                    
+                    <!--author-->
+                    {% if post.author.name == "Shuri_Kikuchi" %}
+                    <div class="author">
+                        <img src="{% static 'img/pro_sk.jpg' %}" alt="" class="author-image">
+                        <div class="author_info">
+                            <strong>
+                                <p>{{post.author.name}}</p>
+                            </strong>
+                            
+                            <small>
+                                <p class = "pub_date">{{post.pub_date}}</p>
+                            </small>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    {% else %}
+                    <div class="author">
+                        <img src="{% static 'img/pro_af.jpg' %}" alt="" class="author-image">
+                        <div class="author_info">
+                            <strong>
+                                <p>{{post.author.name}}</p>
+                            </strong>
+                            
+                            <small>
+                                <p class = "pub_date">{{post.pub_date}}</p>
+                            </small>
+                            
+                        </div>
+                        
+                    </div>
+                    {%endif%}
+                    </div>
+                        
+                        
+                    
+                </div>
+
+                 <!--article's main section-->
+                <div class="main">
+                    {% if post.heading1 %}
+                    <h3>{{post.heading1}}</h3>
+                    {%endif%}
+
+                    {% if post.content1 %}
+                    <p>{{post.content1}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image1 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image1.url }}" alt="{{ post.image1 }}"/ >
+                        {% endif %}
+                    </div>
+
+                    {% if post.heading2 %}
+                    <h3>{{post.heading2}}</h3>
+                    {%endif%}
+
+                    {% if post.content2 %}
+                    <p>{{post.content2}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image2 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image2.url }}" alt="{{ post.image2 }}"/ >
+                        {% endif %}
+                    </div>
+
+                    {% if post.heading3 %}
+                    <h3>{{post.heading3}}</h3>
+                    {%endif%}
+
+                    {% if post.content3 %}
+                    <p>{{post.content3}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image3 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image3.url }}" alt="{{ post.image3 }}"/ >
+                        {% endif %}
+                    </div>
+
+                    {% if post.heading4 %}
+                    <h3>{{post.heading4}}</h3>
+                    {%endif%}
+
+                    {% if post.content4 %}
+                    <p>{{post.content4}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image4 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image4.url }}" alt="{{ post.image4 }}"/ >
+                        {% endif %}
+                    </div>
+
+                    {% if post.heading5 %}
+                    <h3>{{post.heading5}}</h3>
+                    {%endif%}
+
+                    {% if post.content5 %}
+                    <p>{{post.content5}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image5 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image5.url }}" alt="{{ post.image5 }}"/ >
+                        {% endif %}
+                    </div>
+
+                    {% if post.heading6 %}
+                    <h3>{{post.heading6}}</h3>
+                    {%endif%}
+
+                    {% if post.content6 %}
+                    <p>{{post.content6}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image6 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image6.url }}" alt="{{ post.image6 }}"/ >
+                        {% endif %}
+                    </div>
+
+                    {% if post.heading7 %}
+                    <h3>{{post.heading7}}</h3>
+                    {%endif%}
+
+                    {% if post.content7 %}
+                    <p>{{post.content7}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image7 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image7.url }}" alt="{{ post.image7 }}"/ >
+                        {% endif %}
+                    </div>
+
+                    {% if post.heading8 %}
+                    <h3>{{post.heading8}}</h3>
+                    {%endif%}
+
+                    {% if post.content8 %}
+                    <p>{{post.content8}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image8 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image8.url }}" alt="{{ post.image8 }}"/ >
+                        {% endif %}
+                    </div>
+
+                    {% if post.heading9 %}
+                    <h3>{{post.heading9}}</h3>
+                    {%endif%}
+
+                    {% if post.content9 %}
+                    <p>{{post.content9}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image9 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image9.url }}" alt="{{ post.image9 }}"/ >
+                        {% endif %}
+                    </div>
+
+                    {% if post.heading10 %}
+                    <h3>{{post.heading10}}</h3>
+                    {%endif%}
+
+                    {% if post.content10 %}
+                    <p>{{post.content10}}</p>
+                    {%endif%}
+
+                    <div class="a">
+                        {% if post.image10 %}
+                        <div class="line">
+                            <img src="{% static 'img/line.png' %}" alt="a">
+                        </div>
+                        <img src="{{ post.image10.url }}" alt="{{ post.image10 }}"/ >
+                        {% endif %}
+
+                       
+                    </div>
+
+                    
+
+
+                    
+                    
+
+                    
+                    
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                
+            </div>
+            
+                
+            
+        </div>  
+    </dIv>
+ </div>
+{% endblock %}

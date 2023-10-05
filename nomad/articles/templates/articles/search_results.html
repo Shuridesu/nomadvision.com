@@ -1,0 +1,30 @@
+{% extends "articles/base.html" %}
+
+{% load django_bootstrap5 %}
+{%load static%}
+
+
+{% block main %}
+
+<p>search word : <strong>{{search_term}}</strong></p>
+
+<p>matting posts</p>
+{% if search_results %}
+{% for post in search_results %}
+
+<ul>
+    <li>
+        <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
+    </li>
+</ul>
+{% endfor %}
+
+{% else %}
+<p>there are no posts</p>
+
+{% endif %}
+
+
+
+
+{% endblock %}

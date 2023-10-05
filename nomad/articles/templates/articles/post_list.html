@@ -1,0 +1,23 @@
+{% extends "articles/base.html" %}
+
+{% load django_bootstrap5 %}
+{%load static%}
+
+{% block main %}
+  <h2>best articles</h2>
+<ol>
+    {% for post in best_posts %}
+    <li><a href="{% url 'detail' post.id %}">{{ post.title }}</a></li>
+    {% endfor %}
+</ol>
+  <h2>recommended articles</h2>
+
+<ol>
+    {% for post in recommended_posts %}
+    <li><a href="{% url 'detail' post.id %}">{{post.title}}</a></li>
+    {% endfor %}
+</ol>
+
+<a href="{% url 'search' %}">search</a>
+
+{% endblock %}
