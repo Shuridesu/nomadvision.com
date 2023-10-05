@@ -72,7 +72,7 @@
                   <input class="form-control ms-4" type="search" placeholder="Search" aria-label="Search">
                 </form>
   
-                <button class = "btn btn-primary ms-4">join us</button>
+                <button class = "btn btn-primary ms-4" ><a href="{% url 'account_login' %}">Join us</a></button>
               
                 
             </ul>
@@ -99,7 +99,7 @@
           
           
           <div class="footer_btn col-md-4 ms-auto">
-            <a href="#" class = "me-4">
+            <a href="{% url 'account_signup' %}" class = "me-4">
               sign up
             </a>
             <a href="#">
