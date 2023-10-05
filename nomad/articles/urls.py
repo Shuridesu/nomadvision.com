@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -11,8 +11,7 @@ urlpatterns = [
     path('privacy_policy/', views.Privacy.as_view(), name = 'privacy'),
     path('terms&condition/', views.Terms.as_view(), name = 'terms'),
     path('search/', views.search_view, name = 'search'),
-    path('search/<str:search_term>/',views.search_results,name = 'search_results')
-    
+    path('search/<str:search_term>/',views.search_results,name = 'search_results'),
 ]
 
 
