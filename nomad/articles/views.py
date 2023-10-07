@@ -27,33 +27,13 @@ class Privacy(TemplateView):
     
 class Terms(TemplateView):
     template_name = "articles/terms_condition.html"
+
+class SearchResultsView(ListView):
+    model = Post
+    template_name = 'articles/search_results.html'
+    context_object_name = 'search_results'
+
+    def get_queryset(self):
+        query = self.request.GET.get('search_term', '')
+        return Post.objects.filter(title__icontains=query)
     
-from django.shortcuts import redirect
-
-def search_view(request):
-    if request.method == 'POST':
-        form = SearchForm(request.POST)
-        if form.is_valid():
-            # フォームが有効な場合、フォームからデータを取得
-            search_term = form.cleaned_data['word']
-            # ここで適切なビュー関数に遷移させる
-            return redirect('search_results', search_term=search_term)
-    else:
-        form = SearchForm()
-
-    return render(request, 'articles/search.html', {'form': form})
-
-from django.shortcuts import render
-from .models import Post  # あなたのプロジェクトに合わせてモデルをインポートする
-
-def search_results(request, search_term):
-    # データベースから検索結果を取得
-    search_results = Post.objects.filter(title__icontains=search_term)
-
-    # 取得した検索結果をコンテキストに追加
-    context = {
-        'search_term': search_term,
-        'search_results': search_results,
-    }
-
-    return render(request, 'articles/search_results.html', context)

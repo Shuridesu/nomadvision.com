@@ -6,7 +6,7 @@
 
 {% block main %}
 
-<p>search word : <strong>{{search_term}}</strong></p>
+<p>search word : <strong>{{request.GET.search_term}}</strong></p>
 
 <p>matting posts</p>
 {% if search_results %}

@@ -13,76 +13,14 @@
     
 </head>
 <body>
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg bg-white py-4">
-      
-        <div class="container">
-          <a class="navbar-brand pt-1 pe-2" href="/">Nomad Vision</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-              
-              
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Trends
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">AI</a></li>
-                  <li><a class="dropdown-item" href="#">Data</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Analytics
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Industry Insights</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Tools & Resoources
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">AI Software</a></li>
-                  
-                </ul>
-              </li>
-              
-              <div class="about_us">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  </a>
-                  <ul class="dropdown-menu mt-4">
-                    <li><a class="dropdown-item" href="{% url 'about' %}">About us</a></li>
-                    <li><a class="dropdown-item" href="{% url 'privacy' %}">Privacy Policy</a></li>
-                    <li><a class="dropdown-item" href="{% url 'terms' %}">Terms & Condition</a></li>
-                  </ul>
-                  
-                </li>
-              </div>
-  
-              
-              
-                <form class="d-flex" role="search">
-                  <input class="form-control ms-4" type="search" placeholder="Search" aria-label="Search">
-                </form>
-  
-                <button class = "btn btn-primary ms-4" ><a href="{% url 'account_login' %}">Join us</a></button>
-              
-                
-            </ul>
-          </div>
-        </div>
-    </nav>
+    
 
+  {% include "articles/navbar.html" %}
+  
     {% block main %}
     {% endblock %}
 
+    
     <!--Footer section-->
    <footer>
     <div class="footer-top">
