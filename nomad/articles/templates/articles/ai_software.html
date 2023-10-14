@@ -1,0 +1,13 @@
+{% extends "articles/base.html" %}
+{% load django_bootstrap5 %}
+{%load static%}
+
+{% block main %}
+<h2>Ai Software</h2>
+<ul>
+    {% for post in ai_software %}
+    <li><a href="{% url 'detail' post.slug %}">{{post.title}}</a></li>
+    {% endfor %}
+</ul>
+    
+{% endblock main %}

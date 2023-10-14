@@ -1,0 +1,13 @@
+{% extends "articles/base.html" %}
+{% load django_bootstrap5 %}
+{%load static%}
+
+{% block main %}
+<h2>Industry Insights</h2>
+<ul>
+    {% for post in industry_insights %}
+    <li><a href="{% url 'detail' post.slug %}">{{post.title}}</a></li>
+    {% endfor %}
+</ul>
+    
+{% endblock main %}

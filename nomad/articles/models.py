@@ -1,9 +1,11 @@
 from django.db import models
 from django.utils.text import slugify
+from django.urls import reverse
 class Author(models.Model):
     name = models.CharField(max_length=100,default='')
     def __str__(self):
         return self.name
+    
 class Category(models.Model):
     name = models.CharField(max_length=100)
     def __str__(self):
@@ -60,6 +62,11 @@ class Post(models.Model):
     slug = models.SlugField(unique = True, blank = True)
     is_best = models.BooleanField(default = False)
     is_recommended = models.BooleanField(default = False)
+    is_trends_ai = models.BooleanField(default = False)
+    is_trends_data = models.BooleanField(default = False)
+    is_industry_insights = models.BooleanField(default = False)
+    is_ai_software = models.BooleanField(default = False)
+    
     def save(self,*args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
@@ -69,3 +76,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+from registration.models import CustomUser
+    
+class Comment(models.Model):
+    content = models.CharField(max_length = 500)
+    author = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    target = models.ForeignKey(Post,on_delete=models.CASCADE,related_name = 'comments')
+    def get_absolute_url(self):
+        # コメントが属している記事の詳細ページへのURLを生成
+        return reverse('detail', kwargs={'slug': self.target.slug})

@@ -266,4 +266,32 @@
         </div>  
     </dIv>
  </div>
+
+    <!-- comment section -->
+    <div class="comment">
+        <h2>all comments</h2>
+        <h3>{{comment_count}}comment</h3>
+        {% for comment in post.comments.all %}
+        <div class="comment-content">
+          <p>{{ comment.author }}:{{ comment.created_at }}</p>
+          <p>{{ comment.content }}</p>
+          {% if comment.author == request.user %} 
+          <a href="{% url 'comment_edit' comment.pk %}">edit</a> |
+          <a href="{% url 'comment_delete' comment.pk %}">delete</a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      
+      <div class="comment-form">
+        <h2>comment form</h2>
+        <form action='{% url "comment" post.slug %}' method="post">
+          {% csrf_token %}
+          {{ comment_form}}
+          <div>
+            <button type="submit">submit</button>
+          </div>
+        </form>
+      </div>
+
 {% endblock %}
