@@ -12,11 +12,8 @@
 {% if search_results %}
 {% for post in search_results %}
 
-<ul>
-    <li>
-        <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
-    </li>
-</ul>
+{% include "articles/display_post.html" %}
+
 {% endfor %}
 
 {% else %}

@@ -6,7 +6,7 @@
 <h2>Ai Software</h2>
 <ul>
     {% for post in ai_software %}
-    <li><a href="{% url 'detail' post.slug %}">{{post.title}}</a></li>
+    {% include "articles/display_post.html" %}
     {% endfor %}
 </ul>
     
