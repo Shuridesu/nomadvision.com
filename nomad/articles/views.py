@@ -126,3 +126,22 @@ class CommentEditView(UpdateView):
     fields = ['content']
     def get_success_url(self):
         return reverse('detail', kwargs={'slug': self.object.target.slug})
+    
+
+from .models import Category
+class CategoryListView(ListView):
+    model = Post
+    template_name = 'articles/category_list.html'
+    context_object_name = 'category_posts'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category_slug = self.kwargs['category_slug']
+        category = Category.objects.get(slug=category_slug)
+        context['category'] = category
+        return context
+
+    def get_queryset(self):
+        category_slug = self.kwargs['category_slug']
+        category = Category.objects.get(slug=category_slug)
+        return Post.objects.filter(category=category)

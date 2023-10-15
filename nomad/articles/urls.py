@@ -18,6 +18,7 @@ urlpatterns = [
     path('tool&resources/ai_software/',views.AiSoftwareView.as_view(),name = 'ai_software'),
     path('comment/<int:pk>/delete/', views.CommentDeleteView.as_view(), name='comment_delete'),
     path('comment/<int:pk>/edit/', views.CommentEditView.as_view(), name='comment_edit'),
+    path('category/<slug:category_slug>/', views.CategoryListView.as_view(), name='category_list'),
 ]
 
 

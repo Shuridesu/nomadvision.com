@@ -6,7 +6,7 @@
 <h2>AI Trends</h2>
 <ul>
     {% for post in data_trends %}
-    <li><a href="{% url 'detail' post.slug %}">{{post.title}}</a></li>
+    {% include "articles/display_post.html" %}
     {% endfor %}
 </ul>
     

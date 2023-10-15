@@ -8,6 +8,13 @@ class Author(models.Model):
     
 class Category(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            # スラッグが未設定の場合、名前からスラッグを生成
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
     def __str__(self):
         return self.name
 
@@ -75,7 +82,7 @@ class Post(models.Model):
     
 
     def __str__(self):
-        return self.title
+        return f"{self.title},{self.category}"
     
 
 from registration.models import CustomUser
@@ -88,3 +95,4 @@ class Comment(models.Model):
     def get_absolute_url(self):
         # コメントが属している記事の詳細ページへのURLを生成
         return reverse('detail', kwargs={'slug': self.target.slug})
+    

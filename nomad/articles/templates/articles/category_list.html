@@ -1,0 +1,14 @@
+{% extends "articles/base.html" %}
+{% load django_bootstrap5 %}
+{%load static%}
+
+{% block main %}
+<h1>Category: {{ category.name }}</h1>
+    <ul>
+        {% for post in category_posts %}
+        {% include "articles/display_post.html" %}
+        {% endfor %}
+
+
+    </ul>
+{% endblock main %}

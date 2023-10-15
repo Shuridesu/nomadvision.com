@@ -6,7 +6,7 @@
 <h2>Industry Insights</h2>
 <ul>
     {% for post in industry_insights %}
-    <li><a href="{% url 'detail' post.slug %}">{{post.title}}</a></li>
+    {% include "articles/display_post.html" %}
     {% endfor %}
 </ul>
     

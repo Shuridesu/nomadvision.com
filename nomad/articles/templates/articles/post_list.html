@@ -7,15 +7,21 @@
   <h2>best articles</h2>
 <ol>
     {% for post in best_posts %}
-    <li><a href="{% url 'detail' post.slug %}">{{ post.title }}</a></li>
+
+    {% include "articles/display_post.html" %}
+    
     {% endfor %}
 </ol>
   <h2>recommended articles</h2>
 
 <ol>
     {% for post in recommended_posts %}
-    <li><a href="{% url 'detail' post.slug %}">{{post.title}}</a></li>
+    
+    {% include "articles/display_post.html" %}
+
     {% endfor %}
+
+    
 </ol>
 
 <a href="{% url 'account_logout' %}">logout</a>
