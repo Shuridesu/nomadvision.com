@@ -1,9 +1,18 @@
-<li>
-    <a href="{% url 'detail' post.slug %}">{{ post.title }}</a>
-</li>
+<div class="card mx-auto" style="width: 18rem;">
+  <img src="{{ post.title_image.url }}" alt="{{ post.title }}" />
+  <div class="card-body">
+    <h6><a href="{% url 'detail' post.slug %}">{{ post.title }}</a></h6>
+    <ul>
+      {% for category in post.category.all %}
+          <li><a href="{% url 'category_list' category.slug %}">{{ category.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 
-  <ul>
-    {% for category in post.category.all %}
-        <li><a href="{% url 'category_list' category.slug %}">{{ category.name }}</a></li>
-    {% endfor %}
-  </ul>
+
+   
+
+
+
+  

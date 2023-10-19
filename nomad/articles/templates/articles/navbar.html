@@ -51,14 +51,21 @@
           </li>
         </div>
 
-        <form method="get" class="navbar-form" role="search" action = "{% url 'search_results' %}">
-          <div class="form-group">
-              <input type="text" class="form-control" name="search_term" placeholder="search" value="{{ form.search_term }}">
-          </div>
+        <div class="search">
+          <form method="get" class="navbar-form" role="search" action = "{% url 'search_results' %}">
+            <div class="form-group">
+                <input type="text" class="form-control" name="search_term" placeholder="search" value="{{ form.search_term }}">
+            </div>
+            
+          </form>
+          {% if user.is_authenticated %}
+          <a href="{% url 'account_logout' %}"><button>logout</button></a>
+          {% else %}
+          <a href="{% url 'account_login' %}"><button>Join us</button></a>
+          {% endif %}
           
-        </form>
+        </div>
         
-        <button class = "btn btn-primary ms-4" ><a href="{% url 'account_login' %}">Join us</a></button>
         
         
 

@@ -8,7 +8,8 @@
     <title>{{title}}</title>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    <link rel="stylesheet" type = "text/css" href="{% static 'articles/style.css' %}">
+    {% block css %}
+    {% endblock css %}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
 </head>
@@ -20,36 +21,10 @@
     {% block main %}
     {% endblock %}
 
-    
+  
     <!--Footer section-->
-   <footer>
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <hr class = "mb-4">
-          <div class="col-md-4">
-            <h1 class ="pb-2">No mad vision</h1>
-            <h5 class = "mt-4">The Official Innovative Source
-              <br>
-               For AI and Business</h5>
-            <p>© Nomad Vision 2023</p>
-          </div>
-          
-          
-          <div class="footer_btn col-md-4 ms-auto">
-            <a href="{% url 'account_signup' %}" class = "me-4">
-              sign up
-            </a>
-            <a href="#">
-              contact us
-            </a>
-              
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-   </footer>
+  
+    {% include "articles/footer.html" %}
 
 </body>
 </html>
