@@ -8,7 +8,7 @@ from django.urls import reverse,reverse_lazy
 
 class Index(ListView):
     context_object_name = 'posts'
-    queryset = Post.objects.all()
+    queryset = Post.objects.order_by('-pub_date')
     
     def get_context_data(self,**kwargs):
        context = super().get_context_data(**kwargs)

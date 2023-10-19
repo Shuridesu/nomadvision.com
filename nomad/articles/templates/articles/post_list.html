@@ -3,28 +3,93 @@
 {% load django_bootstrap5 %}
 {%load static%}
 
+{% block css %}
+<link rel="stylesheet" type = "text/css" href="{% static 'articles/postlist.css' %}" >
+{% endblock css %}
 {% block main %}
-  <h2>best articles</h2>
-<ol>
-    {% for post in best_posts %}
 
-    {% include "articles/display_post.html" %}
+<!--hero section-->
+<div class="hero d-flex align-items-center"id = "home">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <h1>
+          Everything of AI
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--latest articles-->
+  
+
+<section id="latest" class = "latest">  
+  <div class="container">
+    <div class="row">
+      <h5>Get in touch with latest featured</h5>
+      <hr>
+      {% for post in posts %}
+      <div class="col-lg-3 col-md-6">
+        <div class="card border-0 mx-auto" style="width: 18rem;">
+          <a href="{% url 'detail' post.slug %}">
+            <img src="{{ post.title_image.url }}" alt="{{ post.title }}" class="img-fluid"/>
+          </a>
+          <div class="card-body">
+            <div class="category">
+              {% for category in post.category.all %}
+              
+              <button><a href="{% url 'category_list' category.slug %}">{{ category.name }}</a></button>
+              {% endfor %}
+            </div>
+            <h6><a href="{% url 'detail' post.slug %}">{{ post.title }}</a></h6>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!--recommended section-->
+
+<section id="recomended" class = "latest">  
+  <div class="container">
+    <div class="row">
+      <h5>Recommendation</h5>
+      <hr>
+      {% for post in recommended_posts %}
+      <div class="col-lg-3 col-md-6">
+        <div class="card border-0 mx-auto" style="width: 18rem;">
+          <a href="{% url 'detail' post.slug %}">
+            <img src="{{ post.title_image.url }}" alt="{{ post.title }}" class="img-fluid"/>
+          </a>
+          <div class="card-body">
+            <div class="category">
+              {% for category in post.category.all %}
+              
+              <button><a href="{% url 'category_list' category.slug %}">{{ category.name }}</a></button>
+              {% endfor %}
+            </div>
+            <h6><a href="{% url 'detail' post.slug %}">{{ post.title }}</a></h6>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
     
-    {% endfor %}
-</ol>
-  <h2>recommended articles</h2>
 
-<ol>
-    {% for post in recommended_posts %}
-    
-    {% include "articles/display_post.html" %}
 
-    {% endfor %}
-
-    
-</ol>
-
-<a href="{% url 'account_logout' %}">logout</a>
 
 
 {% endblock %}

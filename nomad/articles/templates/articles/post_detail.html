@@ -2,7 +2,9 @@
 
 {% load django_bootstrap5 %}
 {%load static%}
-
+{% block css %}
+<link rel="stylesheet" type = "text/css" href="{% static 'articles/style.css' %}">
+{% endblock css %}
 
 {% block main %}
 <div class="section">
