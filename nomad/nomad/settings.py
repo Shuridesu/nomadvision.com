@@ -21,6 +21,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_bootstrap_icons',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'articles',
     'registration',
     'django.contrib.admin',
@@ -34,7 +37,10 @@ INSTALLED_APPS = [
     'allauth', # 追加
     'allauth.account', # 追加
     'allauth.socialaccount',
+    
 ]
+
+
 
 SITE_ID = 1
 
@@ -146,3 +152,5 @@ LOGIN_REDIRECT_URL = '/' # ログイン後のリダイレクト先
 ACCOUNT_LOGOUT_REDIRECT_URL = '/account/login/' #　ログアウト後のリダイレクト先
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'

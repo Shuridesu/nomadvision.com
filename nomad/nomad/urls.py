@@ -7,5 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('articles.urls')),
     path('account/', include('allauth.urls')),
-    path('account/',LogoutView.as_view(),name = 'account_logout')
+    path('account/logout',LogoutView.as_view(),name = 'account_logout')
 ]

@@ -2,9 +2,12 @@
 
 {% load django_bootstrap5 %}
 {%load static%}
+{% load bootstrap_icons %}
 {% block css %}
-<link rel="stylesheet" type = "text/css" href="{% static 'articles/style.css' %}">
+<link rel="stylesheet" type = "text/css" href="{% static 'articles/postdetail.css' %}">
 {% endblock css %}
+
+<link rel="stylesheet" href="https://boxicons.com/boxicons/css/boxicons.min.css">
 
 {% block main %}
 <div class="section">
@@ -13,25 +16,27 @@
             <div class="row">
                 <!--title left-->
                 <div class="col-lg-6 text-center">
-                    {% if post.title_image %}
-                    <img src="{{ post.title_image.url }}" alt="{{ post.title }}" class="title-img" />
-                    {% endif %}
+                    <div class="title_img">
+                        {% if post.title_image %}
+                        <img src="{{ post.title_image.url }}" alt="{{ post.title }}" class="title-img" />
+                        {% endif %}
+                    </div>
                 </div>
 
                 <!--title right-->
                 <div class="col-lg-6 pe-4">
                     <div class="title">
                         {% if post.title %}
-                    <h1>{{post.title}}</h1>
-                    {% endif %}
-                    {% if post.subtitle %}
-                    <p class = "mt-4">{{post.subtitle}}</p>
-                    {% endif %}
+                        <h1>{{post.title}}</h1>
+                        {% endif %}
+                        {% if post.subtitle %}
+                        <p class = "mt-4">{{post.subtitle}}</p>
+                        {% endif %}
                     
                     <!--author-->
-                    {% if post.author.name == "Shuri_Kikuchi" %}
+                    {% if post.author.name == "Shuri Kikuchi" %}
                     <div class="author">
-                        <img src="{% static 'img/pro_sk.jpg' %}" alt="" class="author-image">
+                        <img src="{% static 'img/shuri.png' %}" alt="" class="author-image">
                         <div class="author_info">
                             <strong>
                                 <p>{{post.author.name}}</p>
@@ -81,7 +86,7 @@
                     <div class="a">
                         {% if post.image1 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image1.url }}" alt="{{ post.image1 }}"/ >
                         {% endif %}
@@ -98,7 +103,7 @@
                     <div class="a">
                         {% if post.image2 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image2.url }}" alt="{{ post.image2 }}"/ >
                         {% endif %}
@@ -115,7 +120,7 @@
                     <div class="a">
                         {% if post.image3 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image3.url }}" alt="{{ post.image3 }}"/ >
                         {% endif %}
@@ -132,7 +137,7 @@
                     <div class="a">
                         {% if post.image4 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image4.url }}" alt="{{ post.image4 }}"/ >
                         {% endif %}
@@ -149,7 +154,7 @@
                     <div class="a">
                         {% if post.image5 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image5.url }}" alt="{{ post.image5 }}"/ >
                         {% endif %}
@@ -166,7 +171,7 @@
                     <div class="a">
                         {% if post.image6 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image6.url }}" alt="{{ post.image6 }}"/ >
                         {% endif %}
@@ -183,7 +188,7 @@
                     <div class="a">
                         {% if post.image7 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image7.url }}" alt="{{ post.image7 }}"/ >
                         {% endif %}
@@ -200,7 +205,7 @@
                     <div class="a">
                         {% if post.image8 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image8.url }}" alt="{{ post.image8 }}"/ >
                         {% endif %}
@@ -217,7 +222,7 @@
                     <div class="a">
                         {% if post.image9 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image9.url }}" alt="{{ post.image9 }}"/ >
                         {% endif %}
@@ -234,7 +239,7 @@
                     <div class="a">
                         {% if post.image10 %}
                         <div class="line">
-                            <img src="{% static 'img/line.png' %}" alt="a">
+                            <img src="{% static 'img/line1.png' %}" alt="a">
                         </div>
                         <img src="{{ post.image10.url }}" alt="{{ post.image10 }}"/ >
                         {% endif %}
@@ -258,7 +263,7 @@
 
                 </div>
             </div>
-
+            <hr>
             <div class="row">
                 
             </div>
@@ -270,30 +275,22 @@
  </div>
 
     <!-- comment section -->
-    <div class="comment">
-        <h2>all comments</h2>
-        <h3>{{comment_count}}comment</h3>
-        {% for comment in post.comments.all %}
-        <div class="comment-content">
-          <p>{{ comment.author }}:{{ comment.created_at }}</p>
-          <p>{{ comment.content }}</p>
-          {% if comment.author == request.user %} 
-          <a href="{% url 'comment_edit' comment.pk %}">edit</a> |
-          <a href="{% url 'comment_delete' comment.pk %}">delete</a>
-          {% endif %}
-        </div>
-        {% endfor %}
-      </div>
-      
-      <div class="comment-form">
-        <h2>comment form</h2>
-        <form action='{% url "comment" post.slug %}' method="post">
-          {% csrf_token %}
-          {{ comment_form}}
-          <div>
-            <button type="submit">submit</button>
-          </div>
-        </form>
-      </div>
+    
+
+{% if user.is_authenticated %}
+{% include "articles/comment_form.html" %}
+{% else %}
+
+<div class="join_us">
+    <h4>start the discussion</h4>
+    <p class = "bbb">please join us to start comment</p>
+    <a href="{% url 'account_signup' %}"><button>Sign up</button></a>
+    <p class = "bbb">Already a member? <a href="{% url 'account_login' %}">sign in</a></p>
+</div>
+
+        
+    
+{% endif %}
+
 
 {% endblock %}

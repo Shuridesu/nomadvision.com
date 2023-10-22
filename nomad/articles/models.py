@@ -95,4 +95,5 @@ class Comment(models.Model):
     def get_absolute_url(self):
         # コメントが属している記事の詳細ページへのURLを生成
         return reverse('detail', kwargs={'slug': self.target.slug})
-    
+    def __str__(self):
+        return f"{self.author.username}: {self.content}"

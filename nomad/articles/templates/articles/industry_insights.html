@@ -2,12 +2,26 @@
 {% load django_bootstrap5 %}
 {%load static%}
 
+{% block css %}
+<link rel="stylesheet" type = "text/css" href="{% static 'articles/postlist.css' %}" >
+{% endblock css %}
+
 {% block main %}
-<h2>Industry Insights</h2>
-<ul>
-    {% for post in industry_insights %}
-    {% include "articles/display_post.html" %}
-    {% endfor %}
-</ul>
+
+
     
+
+    
+    <div class="container">
+        <div class="list">
+            <div class="row">
+                <h1 class = "text-center">Industry Insights</h1>
+                {% for post in industry_insights %}
+                {% include "articles/display_post.html" %}
+                {% endfor %}
+            
+            </div>
+        </div>
+        
+    </div>
 {% endblock main %}

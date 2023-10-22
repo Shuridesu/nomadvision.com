@@ -1,7 +1,9 @@
 {% extends "articles/base.html" %}
 {% load django_bootstrap5 %}
 {%load static%}
-
+{% block css %}
+<link rel="stylesheet" type = "text/css" href="{% static 'articles/postdetail.css' %}">
+{% endblock css %}
 {% block main %}
 <h1>Terms and Condition</h1>
 

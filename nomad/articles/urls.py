@@ -6,7 +6,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.Index.as_view(), name = 'index'),
-    path('detail/<slug:slug>/', views.Detail.as_view(), name = 'detail'),
     path('about/', views.About.as_view(), name = 'about'),
     path('privacy_policy/', views.Privacy.as_view(), name = 'privacy'),
     path('terms&condition/', views.Terms.as_view(), name = 'terms'),
@@ -19,6 +18,7 @@ urlpatterns = [
     path('comment/<int:pk>/delete/', views.CommentDeleteView.as_view(), name='comment_delete'),
     path('comment/<int:pk>/edit/', views.CommentEditView.as_view(), name='comment_edit'),
     path('category/<slug:category_slug>/', views.CategoryListView.as_view(), name='category_list'),
+    path('<slug:slug>/', views.Detail.as_view(), name = 'detail'),
 ]
 
 

@@ -2,24 +2,40 @@
 
 {% load django_bootstrap5 %}
 {%load static%}
+{% block css %}
+<link rel="stylesheet" type = "text/css" href="{% static 'articles/postlist.css' %}" >
+{% endblock css %}
+
 
 
 {% block main %}
 
-<p>search word : <strong>{{request.GET.search_term}}</strong></p>
 
-<p>matting posts</p>
-{% if search_results %}
-{% for post in search_results %}
 
-{% include "articles/display_post.html" %}
 
-{% endfor %}
+<div class="container">
+    <div class="list">
+        <div class="row">
+        
+            <p>search word : <strong>{{request.GET.search_term}}</strong></p>
 
-{% else %}
-<p>there are no posts</p>
+            <p>matting posts</p>
+            {% if search_results %}
+            {% for post in search_results %}
 
-{% endif %}
+            {% include "articles/display_post.html" %}
+
+            {% endfor %}
+
+            {% else %}
+            <p>there are no posts</p>
+
+            {% endif %}
+        
+        </div>
+    </div>
+    
+</div>
 
 
 
