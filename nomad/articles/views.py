@@ -1,147 +1,63 @@
-from django.shortcuts import render,redirect,get_object_or_404
-from typing import Any
-from django.views.generic import ListView,DetailView,TemplateView,UpdateView
-from django.views.generic.edit import CreateView,DeleteView
-from .models import Post
-from .forms import SearchForm
-from django.urls import reverse,reverse_lazy
+from rest_framework.generics import ListAPIView,RetrieveAPIView
+from .models import Post,Category
+from .serializers import IndexSerializer,CategorySerializer
 
-class Index(ListView):
-    context_object_name = 'posts'
-    queryset = Post.objects.order_by('-pub_date')
-    
-    def get_context_data(self,**kwargs):
-       context = super().get_context_data(**kwargs)
-       context['recommended_posts'] = Post.objects.filter(is_recommended = True)
-       context['best_posts'] = Post.objects.filter(is_best=True)
-       return context
+class LatestPostsView(ListAPIView):
+    serializer_class = IndexSerializer
+    queryset = Post.objects.all().order_by('-id')
 
-class AiTrendsView(ListView):
-    context_object_name = 'posts'
-    queryset = Post.objects.all()
-    template_name = 'articles/trends_ai.html'
+class RecommendedPostsView(ListAPIView):
+    serializer_class = IndexSerializer
+    queryset = Post.objects.filter(is_recommended=True)
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['ai_trends'] = Post.objects.filter(is_trends_ai = True)
-        return context
+class TrendsAiPostsView(ListAPIView):
+    serializer_class = IndexSerializer
+    queryset = Post.objects.filter(is_trends_ai=True)
     
-class DataTrendsView(ListView):
-    context_object_name = 'posts'
-    queryset = Post.objects.all()
-    template_name = 'articles/trends_data.html'
+class TrendsDataPostsView(ListAPIView):
+    serializer_class = IndexSerializer
+    queryset = Post.objects.filter(is_trends_data=True)
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['data_trends']= Post.objects.filter(is_trends_data = True)
-        return context
+class IndustryAnalyticsPostsView(ListAPIView):
+    serializer_class = IndexSerializer
+    queryset = Post.objects.filter(is_industry_insights=True)
     
-class IndustryInsightsView(ListView):
-    context_object_name = 'posts'
-    queryset = Post.objects.all()
-    template_name = 'articles/industry_insights.html'
+class AiSoftwarePostsView(ListAPIView):
+    serializer_class = IndexSerializer
+    queryset = Post.objects.filter(is_ai_software=True)
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['industry_insights']= Post.objects.filter(is_industry_insights = True)
-        return context
-    
-class AiSoftwareView(ListView):
-    context_object_name = 'posts'
-    queryset = Post.objects.all()
-    template_name = 'articles/ai_software.html'
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['ai_software']= Post.objects.filter(is_ai_software = True)
-        return context
-         
-        
-    
-class Detail(DetailView):
-    model = Post
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        post = self.object
-        
-        comment_count = post.comments.count()
-        
-        context['comment_form'] = CommentForm
-        context['comment_count'] = comment_count
- 
-        return context
-    
-class About(TemplateView):
-    template_name = "articles/about_us.html"
-    
-class Privacy(TemplateView):
-    template_name = "articles/privacy_policy.html"
-    
-class Terms(TemplateView):
-    template_name = "articles/terms_condition.html"
+from rest_framework.response import Response
 
-class SearchResultsView(ListView):
-    model = Post
-    template_name = 'articles/search_results.html'
-    context_object_name = 'search_results'
+class PostDetailView(RetrieveAPIView):
+    queryset = Post.objects.all()
+    serializer_class = IndexSerializer
+    lookup_field = 'slug'
 
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+
+        # 前後の記事を取得
+        prev_instance = Post.objects.filter(id__lt=instance.id).order_by('-id').first()
+        next_instance = Post.objects.filter(id__gt=instance.id).order_by('id').first()
+        prev_serializer = self.get_serializer(prev_instance)
+        next_serializer = self.get_serializer(next_instance)
+
+        # レスポンスに前後の記事を含める
+        return Response({
+            'post': serializer.data,
+            'previous': prev_serializer.data if prev_instance else None,
+            'next': next_serializer.data if next_instance else None
+        })
+
+    
+
+class PostCategoryView(ListAPIView):
+    serializer_class = IndexSerializer
     def get_queryset(self):
-        query = self.request.GET.get('search_term', '')
-        return Post.objects.filter(title__icontains=query)
-    
-from .models import Comment
-from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import CommentForm
-
-class CommentView(LoginRequiredMixin, CreateView):
-    model = Comment
-    form_class = CommentForm
+        category_slug = self.kwargs['category']
+        return Post.objects.filter(category__slug=category_slug)
  
-    #格納する値をチェック
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        post_slug = self.kwargs.get('slug')
-        post = get_object_or_404(Post, slug=post_slug)
- 
-        comment = form.save(commit=False)
-        comment.target = post
-        comment.save()
- 
-        return redirect('detail', slug=post_slug,)
-    
-    
-    
-  
-class CommentDeleteView(DeleteView):
-    model = Comment
-    template_name = 'articles/confirm_comment_delete.html'
-    
-    def get_success_url(self):
-        # 削除後にコメントが属していた記事の詳細ページへのURLを生成
-        return reverse('detail', kwargs={'slug': self.object.target.slug})
-
-class CommentEditView(UpdateView):
-    model = Comment
-    template_name = 'articles/edit_comment.html'
-    fields = ['content']
-    def get_success_url(self):
-        return reverse('detail', kwargs={'slug': self.object.target.slug})
-    
-
-from .models import Category
-class CategoryListView(ListView):
-    model = Post
-    template_name = 'articles/category_list.html'
-    context_object_name = 'category_posts'
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        category_slug = self.kwargs['category_slug']
-        category = Category.objects.get(slug=category_slug)
-        context['category'] = category
-        return context
-
-    def get_queryset(self):
-        category_slug = self.kwargs['category_slug']
-        category = Category.objects.get(slug=category_slug)
-        return Post.objects.filter(category=category)
+class CategoryView(ListAPIView):
+     serializer_class = CategorySerializer
+     queryset = Category.objects.all()

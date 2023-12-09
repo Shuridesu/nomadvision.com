@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'allauth', # 追加
     'allauth.account', # 追加
     'allauth.socialaccount',
+    'rest_framework',
     
 ]
 
