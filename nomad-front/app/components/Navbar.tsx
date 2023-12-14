@@ -7,7 +7,7 @@ import SideBar from "./SideBar";
 const Navbar = () => {
   return (
     <div className="z-10">
-      <nav className="relative flex items-center bg-transparent">
+      <nav className="dark:bg-black relative flex items-center bg-transparent">
         <Link href="/">
           <div className="flex items-center">
             <span className="mt-4 ms-6 sm:ms-14 max-w-none text-xl sm:text-2xl md:text-3xl font-extrabold me-2 text-blue-400">

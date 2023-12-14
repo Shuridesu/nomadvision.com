@@ -1,6 +1,4 @@
 'use client'
-
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
@@ -17,7 +15,7 @@ export default function Card({ posts }: Props) {
           <Link href={`/${post.slug}`} className="group " key={post.id}>
             <div className="border-none mt-8">
               <figure>
-                <Image
+                <img
                   src={post.title_image}
                   alt={post.title_image_description}
                   width = {500}

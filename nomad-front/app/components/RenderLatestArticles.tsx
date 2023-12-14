@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
@@ -23,7 +22,7 @@ export default function RenderLatestArticles({ posts }: Props) {
           <Link href={post.slug} className="group " key={post.id}>
             <div className="border-none mt-8 -me-100">
               <figure>
-                <Image
+                <img
                   src={post.title_image}
                   alt={post.title_image_description}
                   width = {500}

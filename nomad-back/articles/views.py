@@ -4,7 +4,7 @@ from .serializers import IndexSerializer,CategorySerializer
 
 class LatestPostsView(ListAPIView):
     serializer_class = IndexSerializer
-    queryset = Post.objects.all().order_by('-id')
+    queryset = Post.objects.all().order_by('-pub_date')
 
 class RecommendedPostsView(ListAPIView):
     serializer_class = IndexSerializer
