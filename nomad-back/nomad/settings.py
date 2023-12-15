@@ -87,14 +87,15 @@ WSGI_APPLICATION = 'nomad.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 import dj_database_url
-from dotenv import (
-    find_dotenv,
-    load_dotenv,
-)
-load_dotenv(find_dotenv())
+import dj_database_url
+import os
+
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600),
+    'default': dj_database_url.config(default=os.environ.get('postgres://obyiqmaarxwgzt:577c69b67ad1b7a6dd133607cad35151a5daf161ff770e2f6d7f76d3272524ef@ec2-3-210-173-88.compute-1.amazonaws.com:5432/d97n9jk1iqg70t'))
 }
+
+
+
 
 
 # Password validation
