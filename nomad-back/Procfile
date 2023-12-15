@@ -1,0 +1,1 @@
+web: gunicorn nomad-back.wsgi:application --log-file -
