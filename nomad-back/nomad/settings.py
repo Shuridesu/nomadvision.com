@@ -10,12 +10,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h5_o63*@we^zldtyq%m-q#o2_1ao4h37e1l-u+97b*+c!ypzu@'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1' ,'herokuapp.com']
 
 
 # Application definition
@@ -156,3 +156,20 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/account/login/' #　ログアウト後のリダ�
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'].update(db_from_env)
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+if not DEBUG:
+    SECRET_KEY = 'django-insecure-h5_o63*@we^zldtyq%m-q#o2_1ao4h37e1l-u+97b*+c!ypzu@'   // 削除したSECRET_KEYをコピペします
+    import django_heroku
+    django_heroku.settings(locals())
