@@ -39,7 +39,7 @@ export default function page() {
         5. Disclaimer of Warranties
         </h1>
         <p className='mt-16 text-sm sm:text-xl lg:text-2xl'>
-        The services and information on nomadvision.net are provided "as is" without any warranties, either express or implied, including but not limited to, implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+        The services and information on nomadvision.net are provided &quot;as is&quot; without any warranties, either express or implied, including but not limited to, implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
         </p>
         <h1 className='font-semibold text-3xl text-center mt-16'>
         6. Limitation of Liability

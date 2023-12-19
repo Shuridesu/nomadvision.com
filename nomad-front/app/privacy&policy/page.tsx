@@ -17,13 +17,13 @@ export default function page() {
         Personal Identification Information: We may collect personal identification information from Users in various ways, including, but not limited to, when Users visit our site, register, fill out a form, and in connection with other activities, services, features, or resources we make available.
         </p>
         <p className='mt-16 text-sm sm:text-xl lg:text-2xl'>
-        Non-Personal Identification Information: We may collect non-personal identification information about Users whenever they interact with our site. This may include the browser name, type of computer, and technical information about Users' means of connection to our site.
+        Non-Personal Identification Information: We may collect non-personal identification information about Users whenever they interact with our site. This may include the browser name, type of computer, and technical information about Users&apos; means of connection to our site.
         </p>
         <h1 className='font-semibold text-3xl text-center mt-16'>
         2. How We Use Collected Information
         </h1>
         <p className='mt-16 text-sm sm:text-xl lg:text-2xl'>
-        nomadvision.net may collect and use Users' personal information for the following purposes:
+        nomadvision.net may collect and use Users&apos; personal information for the following purposes:
         </p>
         <ul className='mt-10 w-10/12 lg:w-1/3 mx-auto text-left text-sm sm:text-xl lg:text-2xl' >
           <li>
@@ -43,7 +43,7 @@ export default function page() {
         3. Web Browser Cookies
         </h1>
         <p className='mt-16 text-sm sm:text-xl lg:text-2xl'>
-        Our Site may use "cookies" to enhance the User experience. Users' web browsers place cookies on their hard drives for record-keeping purposes and sometimes to track information about them. Users may choose to set their web browser to refuse cookies or to alert you when cookies are being sent.
+        Our Site may use &quot;cookies&quot; to enhance the User experience. Users&apos; web browsers place cookies on their hard drives for record-keeping purposes and sometimes to track information about them. Users may choose to set their web browser to refuse cookies or to alert you when cookies are being sent.
         </p>
         <h1 className='font-semibold text-3xl text-center mt-16'>
         4. How We Protect Your Information
@@ -55,7 +55,7 @@ export default function page() {
         5. Sharing Your Personal Information
         </h1>
         <p className='mt-16 text-sm sm:text-xl lg:text-2xl'>
-        We do not sell, trade, or rent Users' personal identification information to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners, trusted affiliates, and advertisers.
+        We do not sell, trade, or rent Users&apos; personal identification information to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners, trusted affiliates, and advertisers.
         </p>
         <h1 className='font-semibold text-3xl text-center mt-16'>
         6. Third Party Websites
