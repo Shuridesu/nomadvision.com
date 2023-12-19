@@ -1,4 +1,5 @@
 'use client'
+import img from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Fade } from "react-awesome-reveal";

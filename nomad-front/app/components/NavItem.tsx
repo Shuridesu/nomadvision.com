@@ -208,29 +208,28 @@ export default function NavItem() {
                 : "opacity-0 pointer-events-none hidden"
             }`}
           >
-            <li className="text-center text-sm py-2 font-bold text-gray-300">
-              {/* <Link href="/about-us" onClick={closeAllMenus} className='menu5'>
+            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
+              <Link href="/about-us" onClick={closeAllMenus} className='menu5'>
                 ABOUT US
-              </Link> */}
-              <p>ABOUT US</p>
+              </Link>
+              
             </li>
-            <li className="text-center text-sm py-2 font-bold text-gray-300 ">
-              {/* <Link href="mailto:example@example.com?subject=Your Email Subject&body=Hello, this is the pre-filled body of the email." onClick={closeAllMenus} className='menu6'>
+            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
+              <Link href="mailto:example@example.com?subject=Your Email Subject&body=Hello, this is the pre-filled body of the email." onClick={closeAllMenus} className='menu6'>
                 CONTACT US
-              </Link> */}
-              <p>CONTACT US</p>
+              </Link>
             </li>
-            <li className="text-center text-sm py-2 font-bold text-gray-300 ">
-              {/* <Link href="/terms&conditions" onClick={closeAllMenus} className='menu7'>
+            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
+              <Link href="/terms&conditions" onClick={closeAllMenus} className='menu7'>
                 TERMS&CONDITIONS
-              </Link> */}
-              TERMS&CONDITIONS
+              </Link>
+              
             </li>
-            <li className="text-center text-sm py-2 font-bold text-gray-300">
-              {/* <Link href="/privacy&policy" onClick={closeAllMenus} className='menu8'>
+            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
+              <Link href="/privacy&policy" onClick={closeAllMenus} className='menu8'>
                 PRIVACY&POLICY
-              </Link> */}
-              PRIVACY&POLICY
+              </Link>
+              
             </li>
           </ul>
         </span>

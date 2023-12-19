@@ -3,6 +3,7 @@ import Link from "next/link";
 import getRecPosts from "@/lib/getRecPosts";
 import RecommendedIcon from "../Icons/RecommendedIcon";
 import Carousel from "./Carousel";
+import Image from "next/image";
 
 export default async function RecArticles() {
   const posts: Promise<Post[]> = getRecPosts();

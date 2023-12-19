@@ -75,7 +75,7 @@ export default function SideBar() {
       <div
         className={`absolute right-0 h-max pb-14 rounded-xl transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-y-0" : "translate-x-full"
-        } w-1/2 sm:w-1/3 bg-blue-500 bg-opacity-80 shadow-md z-1 lg:hidden`}
+        } w-2/3 sm:w-1/3 bg-blue-500 bg-opacity-80 shadow-md z-1 lg:hidden`}
       >
         <div>
           <ul className="mt-20 text-xl sm:text-2xl font-bold">
@@ -120,7 +120,7 @@ export default function SideBar() {
               <span className="me-4">
                 <ToolIcon2 />
               </span>
-              <button className="text-white bg-gradient-to-r from-black to-black bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300">
+              <button className="text-white bg-gradient-to-r from-black to-black bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 overflow-wrap break-words">
                 TOOL&PAPERS
               </button>
             </li>
@@ -156,19 +156,19 @@ export default function SideBar() {
             <ul className={`mt-4 mb-4 py-3 border-y-2 text-gray-300 font-bold ${showMenu5
             ? "pointer-events-auto"
             : "opacity-0 pointer-events-none hidden"}`}>
-              <li className="text-lg sm:xl ms-20  hover:underline hover:text-black transition-all duration-300 mb-3">
+              <li className="text-lg sm:xl ms-14  hover:underline hover:text-black transition-all duration-300 mb-3">
                 <Link href="/about-us" onClick={closeAllMenus}>ABOUT US</Link>
               </li>
               <hr/>
-              <li className="text-lg sm:xl ms-20  hover:underline hover:text-black transition-all duration-300 mt-3 mb-3">
+              <li className="text-lg sm:xl ms-14  hover:underline hover:text-black transition-all duration-300 mt-3 mb-3">
                 <Link href="mailto:example@example.com?subject=Your Email Subject&body=Hello, this is the pre-filled body of the email." onClick={closeAllMenus}>CONTACT US</Link>
               </li>
               <hr/>
-              <li className="text-lg sm:xl ms-20  hover:underline hover:text-black transition-all duration-300 mt-3 mb-3">
+              <li className="text-lg sm:xl ms-14  hover:underline hover:text-black transition-all duration-300 mt-3 mb-3">
                 <Link href="/terms&conditions" onClick={closeAllMenus}>TERMS&CONDITION</Link>
               </li>
               <hr/>
-              <li className="text-lg sm:xl ms-20  hover:underline hover:text-black transition-all duration-300 mt-3">
+              <li className="text-lg sm:xl ms-14  hover:underline hover:text-black transition-all duration-300 mt-3">
                 <Link href="/privacy&policy" onClick={closeAllMenus}>PRIVACY&POLICY</Link>
               </li>
             </ul>

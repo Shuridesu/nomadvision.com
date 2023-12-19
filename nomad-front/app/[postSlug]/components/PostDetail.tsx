@@ -19,7 +19,7 @@ export default async function PostDetail({ promise }: Props) {
       <article className="container p-4 mt-14">
         {/* article title */}
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <figure className="flex items-center justify-center ms-10 me-10 xl:me-0">
+          <figure className="flex items-center justify-center ms-10 me-10 xl:me-0 max-w-[500px]">
             <img
               src={post.post.title_image}
               className="max-w-1/2 rounded-2xl"
@@ -34,7 +34,7 @@ export default async function PostDetail({ promise }: Props) {
                   <Link href={`/tag/${category.slug}`} key={category.id}>
                     <button
                       key={category.id}
-                      className=" bg-gray-200 px-2 text-sm rounded-xl font-normal border-blue-500 mt-2 hover:bg-gray-300 transition-all duration-200"
+                      className=" bg-gray-200 px-2 text-sm rounded-xl font-normal border-blue-500 mt-2 hover:bg-gray-300 transition-all duration-200 me-2"
                     >
                       {category.name}
                     </button>
