@@ -1,0 +1,35 @@
+{% load i18n %}
+{% load django_bootstrap5%}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block extra_css %}{% endblock %}
+    <title>{% block head_title %}{% endblock %}</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" class="css">
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body>
+    {% include 'articles/navbar.html' %}
+    {% block allauth %}
+      {% if messages %}
+      <div>
+      <strong>Messages:</strong>
+      <ul>
+          {% for message in messages %}
+          <li>{{message}}</li>
+          {% endfor %}
+      </ul>
+      </div>
+      {% endif %}
+    {% endblock %}
+    {% block content %}{% endblock %}
+    {% block extra_body %}{% endblock %}
+    {% include 'articles/footer.html' %}
+  </body>
+</html>
