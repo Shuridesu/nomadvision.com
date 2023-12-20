@@ -129,7 +129,7 @@ export default async function PostDetail({ promise }: Props) {
             </div>
             <p className="text-xl mt-3">{post.post.content4}</p>
 
-            <h1 className="font-semibold mt-8 text-3xl">
+            <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading5}
             </h1>
             
@@ -147,7 +147,7 @@ export default async function PostDetail({ promise }: Props) {
             </div>
             <p className="text-xl mt-3">{post.post.content5}</p>
 
-            <h1 className="font-semibold mt-8 text-3xl">
+            <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading6}
             </h1>
             
@@ -165,7 +165,7 @@ export default async function PostDetail({ promise }: Props) {
             </div>
             <p className="text-xl mt-3">{post.post.content6}</p>
 
-            <h1 className="font-semibold mt-8 text-3xl">
+            <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading7}
             </h1>
             
@@ -183,7 +183,7 @@ export default async function PostDetail({ promise }: Props) {
             </div>
             <p className="text-xl mt-3">{post.post.content7}</p>
 
-            <h1 className="font-semibold mt-8 text-3xl">
+            <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading8}
             </h1>
             
@@ -201,7 +201,7 @@ export default async function PostDetail({ promise }: Props) {
             </div>
             <p className="text-xl mt-3">{post.post.content8}</p>
 
-            <h1 className="font-semibold mt-8 text-3xl">
+            <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading9}
             </h1>
             
@@ -219,7 +219,7 @@ export default async function PostDetail({ promise }: Props) {
             </div>
             <p className="text-xl mt-3">{post.post.content9}</p>
 
-            <h1 className="font-semibold mt-8 text-3xl">
+            <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading10}
             </h1>
             
