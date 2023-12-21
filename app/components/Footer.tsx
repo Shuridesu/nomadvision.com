@@ -5,7 +5,7 @@ import Logo from "./Logo";
 export default function Footer() {
   return (
     <div>
-      <footer className="footer p-10 bg-white text-black-content py-32 mt-24 border-t-2">
+      <footer className="footer p-10 bg-white text-black-content py-32 mt-24 border-t-2 -translate-x-10 sm:translate-x-0">
         <aside className="ms-20">
           <div className="flex items-center mb-2">
             <span className="mt-3 text-2xl font-extrabold me-2 text-blue-400">

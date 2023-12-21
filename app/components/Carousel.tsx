@@ -61,7 +61,7 @@ export default function Carousel({children}:any) {
   }
   const settings = {
     
-    dots: true,
+    dots: false,
     arrows: true,
     infinite: false,
     speed: 800,
