@@ -54,7 +54,7 @@ export default async function PostDetail({ promise }: Props) {
         </div>
 
         {/* article content */}
-        <div className="container mt-24 w-4/5 xl:w-2/3">
+        <div className="container mt-24 w-full sm:w-4/5 xl:w-2/3">
           {/* article content */}
           <div>
             <h1 className="font-semibold mt-8 text-3xl text-center">

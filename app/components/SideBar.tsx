@@ -68,7 +68,7 @@ export default function SideBar() {
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative lg:hidden mt-3 me-3 z-20"
+        className="relative xl:hidden mt-3 me-3 z-20"
       >
         <MenuIcon /> {/* ハンバーガーメニューアイコン */}
       </button>

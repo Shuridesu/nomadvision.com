@@ -12,15 +12,9 @@ export default function Hero() {
             AND <span className="text-blue-900">NETWORKING COMMUNITY</span>{" "}
             CONVERGE
           </h1>
-          <div className="join">
-            <input
-              className="input input-bordered join-item w-40 lg:w-96 lg:h-16 lg:text-2xl"
-              placeholder="  Email"
-            />
-            <button className="btn join-item rounded-r-full btn-disabled lg:h-16">
-              Subscribe
-            </button>
-          </div>
+          <button className = "btn btn-disabled w-3/5 h-16 text-center mt-3 text-2xl text-white">
+            SUBSCRIBE
+          </button>
         </span>
       </div>
     </Fade>
