@@ -76,7 +76,7 @@ export default function Carousel({children}:any) {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: false,
-          dots: true
+          dots: false
         }
       },
       {
