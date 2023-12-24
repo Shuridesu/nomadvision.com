@@ -75,7 +75,7 @@ export default function SideBar() {
       <div
         className={`absolute right-0 h-max pb-14 rounded-xl transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-y-0" : "translate-x-full hidden"
-        } w-2/3 sm:w-1/3 bg-blue-500 bg-opacity-80 shadow-md z-1 lg:hidden`}
+        } w-2/3 sm:w-1/3 bg-blue-500 bg-opacity-80 shadow-md z-1 xl:hidden`}
       >
         <div>
           <ul className="mt-20 text-xl sm:text-2xl font-bold">
