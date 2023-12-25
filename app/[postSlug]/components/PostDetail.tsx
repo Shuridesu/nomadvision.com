@@ -46,7 +46,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="flex text-gray-400 mt-6">
               <img src="/a.png" alt="avtandil" width={50} height={50} className="rounded-full border"/>
               <ul className="ms-6">
-                <li className="text-black text-xl">Avtadil Abdyrakhmanov</li>
+                <li className="text-black text-xl">Avtandil Abdyrakhmanov</li>
                 <li className="">Founder&Author | {post.post.pub_date}</li>
               </ul>
             </div>
