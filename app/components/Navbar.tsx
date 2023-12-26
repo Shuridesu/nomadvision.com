@@ -34,7 +34,7 @@ const Navbar = () => {
         </span>
         
         <span className="hidden xl:btn btn-disabled btn-xs sm:btn-sm md:btn-md me-12 mt-6 justify-end">
-          <p className="text-white">subscribe</p>
+          <p className="text-white">JOIN US</p>
         </span>
       </nav>
     </div>

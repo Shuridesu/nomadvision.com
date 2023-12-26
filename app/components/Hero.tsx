@@ -13,7 +13,7 @@ export default function Hero() {
             CONVERGE
           </h1>
           <button className = "btn btn-disabled w-3/5 h-16 text-center mt-3 text-2xl text-white">
-            SUBSCRIBE
+            JOIN US
           </button>
         </span>
       </div>

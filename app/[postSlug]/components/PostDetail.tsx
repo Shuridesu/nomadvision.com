@@ -2,7 +2,7 @@ import CopyIcon from "@/app/Icons/CopyIcon";
 import LinkedIcon from "@/app/Icons/LinkedIn";
 import TelegramIcon from "@/app/Icons/telegramIcon";
 import TwitterIcon from "@/app/Icons/twitterIcon";
-import img from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -20,7 +20,7 @@ export default async function PostDetail({ promise }: Props) {
         {/* article title */}
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <figure className="flex items-center justify-center ms-10 me-10 xl:me-0 max-w-[500px]">
-            <img
+            <Image
               src={post.post.title_image}
               className="max-w-1/2 rounded-2xl"
               alt={post.post.title_image_description}
@@ -44,7 +44,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.subtitle}
             </h3>
             <div className="flex text-gray-400 mt-6">
-              <img src="/a.png" alt="avtandil" width={50} height={50} className="rounded-full border"/>
+              <Image src="/a.png" alt="avtandil" width={50} height={50} className="rounded-full border"/>
               <ul className="ms-6">
                 <li className="text-black text-xl">Avtandil Abdyrakhmanov</li>
                 <li className="">Founder&Author | {post.post.pub_date}</li>
@@ -64,7 +64,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image1 && (
-                <img
+                <Image
                   src={post.post.image1}
                   alt={post.post.image1_description}
                   className="rounded-xl my-10"
@@ -82,7 +82,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm my-14">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image2 && (
-                <img
+                <Image
                   src={post.post.image2}
                   alt={post.post.image2_description}
                   className="rounded-xl my-10"
@@ -100,7 +100,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image3 && (
-                <img
+                <Image
                   src={post.post.image3}
                   alt={post.post.image3_description}
                   className="rounded-xl my-10"
@@ -118,7 +118,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image4 && (
-                <img
+                <Image
                   src={post.post.image4}
                   alt={post.post.image4_description}
                   className="rounded-xl my-10"
@@ -136,7 +136,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image5 && (
-                <img
+                <Image
                   src={post.post.image5}
                   alt={post.post.image5_description}
                   className="rounded-xl my-10"
@@ -154,7 +154,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image6 && (
-                <img
+                <Image
                   src={post.post.image6}
                   alt={post.post.image6_description}
                   className="rounded-xl my-10"
@@ -172,7 +172,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image7 && (
-                <img
+                <Image
                   src={post.post.image7}
                   alt={post.post.image7_description}
                   className="rounded-xl my-10"
@@ -190,7 +190,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image8 && (
-                <img
+                <Image
                   src={post.post.image8}
                   alt={post.post.image8_description}
                   className="rounded-xl my-10"
@@ -208,7 +208,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image9 && (
-                <img
+                <Image
                   src={post.post.image9}
                   alt={post.post.image9_description}
                   className="rounded-xl my-10"
@@ -226,7 +226,7 @@ export default async function PostDetail({ promise }: Props) {
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image10 && (
-                <img
+                <Image
                   src={post.post.image10}
                   alt={post.post.image10_description}
                   className="rounded-xl my-10"
@@ -283,7 +283,7 @@ export default async function PostDetail({ promise }: Props) {
                 <h1 className="text-xl font-bold ps-14 -pe-10 mb-3 bg-gray-300 group-hover:bg-gradient-to-l group-hover:from-blue-300 group-hover:to-blue-500 transition-all duration-300 clip-diagonal-l rounded-e-lg">
                   PREVIOUS
                 </h1>
-                <img
+                <Image
                   src={post.previous.title_image}
                   alt={post.previous.title_image_description}
                   className="rounded-3xl mb-2 mt-6"
@@ -330,7 +330,7 @@ export default async function PostDetail({ promise }: Props) {
                 <h1 className="text-xl text-end font-bold pe-14  mb-3 bg-gray-300 group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-blue-500 transition-all duration-300 clip-diagonal-r rounded-e-lg">
                   NEXT
                 </h1>
-                <img
+                <Image
                   src={post.next.title_image}
                   alt={post.next.title_image_description}
                   className="rounded-3xl mb-3 mt-6"

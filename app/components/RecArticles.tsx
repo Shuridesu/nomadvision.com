@@ -27,7 +27,7 @@ export default async function RecArticles() {
             <div className="flex" key={post.id}>
               <div className="border-none mt-8 ms-4 pb-6">
                 <Link href={post.slug} className="group">
-                  <img
+                  <Image
                     src={post.title_image}
                     alt={post.title_image_description}
                     width = {500}
