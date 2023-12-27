@@ -16,7 +16,7 @@ export default function Footer() {
             </span>
           </div>
           <p>
-            THE OFFICIAL INNOVATIVE SOURCE OF AI AND FOR BUSINESS
+            THE OFFICIAL INNOVATIVE SOURCE OF AI AND DATA FOR BUSINESS
             <br />
             @ NOMAD VISION 2023
           </p>
