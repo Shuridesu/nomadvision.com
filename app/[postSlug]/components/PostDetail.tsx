@@ -24,6 +24,8 @@ export default async function PostDetail({ promise }: Props) {
               src={post.post.title_image}
               className="max-w-1/2 rounded-2xl"
               alt={post.post.title_image_description}
+              width={500}
+              height={300}
             />
           </figure>
           <div className="text-black lg:max-w-[500px]">
@@ -43,9 +45,9 @@ export default async function PostDetail({ promise }: Props) {
             <h3 className="font-medium text-2xl mt-4 translate-y-2">
               {post.post.subtitle}
             </h3>
-            <div className="flex text-gray-400 mt-6">
-              <Image src="/a.png" alt="avtandil" width={50} height={50} className="rounded-full border"/>
-              <ul className="ms-6">
+            <div className="flex text-gray-400 mt-6 items-center">
+              <Image src="/af.png" alt="avtandil" width={55} height={50} className="rounded-full h-full"/>
+              <ul className="mt-2 ms-6">
                 <li className="text-black text-xl">Avtandil Abdyrakhmanov</li>
                 <li className="">Founder&Author | {post.post.pub_date}</li>
               </ul>
