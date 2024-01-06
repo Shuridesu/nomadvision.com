@@ -36,7 +36,7 @@ export default function Card({ posts }: Props) {
                 ))}
               </div>
               <div className="text-black">
-                <h2 className="font-semibold text-2xl ms-4 mt-4 translate-y-2 group-hover:text-blue-500 group-hover:underline transition-all duration-600">
+                <h2 className="font-semibold text-2xl ms-4 mt-4 translate-y-2 group-hover:text-blue-500 transition-all duration-600">
                   {post.title}
                 </h2>
               </div>
