@@ -7,38 +7,31 @@ import SideBar from "./SideBar";
 const Navbar = () => {
   return (
     <div className="z-10">
-      <nav className="dark:bg-black relative flex items-center bg-transparent">
-        <Link href="/">
-          <div className="flex items-center">
-            <span className="relative mt-4 ms-6 sm:ms-14 max-w-none text-xl sm:text-2xl md:text-3xl font-extrabold me-2 text-blue-400">
-              NOMAD VISION
-              <span className="absolute -top-4 ms-2">
+      <nav className="flex items-center h-28 bg-transparent">
+        <Link href="/" className="no-underline">
+          <span className="relative mt-4 ms-6 sm:ms-14 max-w-none text-xl sm:text-2xl md:text-3xl font-extrabold me-2 text-blue-400">
+            NOMAD VISION
+            <span className="absolute -top-4 ms-2">
               <Logo />
-              </span>
             </span>
-          </div>
+          </span>
         </Link>
-        
+
         <span className="ms-auto">
-          
-          <SideBar/>
-          
+          <SideBar />
         </span>
+
+        <span className="hidden xl:flex z-20 -
         
-        
-        
-    
-        
-        <span className="hidden xl:flex justify-center items-center mt-4 mx-auto xl:-translate-x-10 2xl:-translate-x-24 z-20">
+        translate-x-4 mx-auto">
           <NavItem />
         </span>
-        
-        <span className="hidden xl:btn btn-disabled btn-xs sm:btn-sm md:btn-md me-12 mt-6 justify-end">
-          <p className="text-white">JOIN US</p>
-        </span>
+
+        <button className="hidden xl:btn btn-disabled btn-xs sm:btn-sm md:btn-md justify-end ms-auto me-8">
+          JOIN US
+        </button>
       </nav>
     </div>
-    
   );
 };
 

@@ -26,33 +26,35 @@ export default async function RecArticles() {
           {post.map((post) => (
             <div className="flex" key={post.id}>
               <div className="border-none mt-8 ms-4 pb-6">
-                <Link href={post.slug} className="group">
-                  <Image
-                    src={post.title_image}
-                    alt={post.title_image_description}
-                    width = {500}
-                    height = {300}
-                    className="rounded-xl group-hover:scale-105 transition-all duration-150"
-                  />
+                <div className="group">
+                  <Link href={post.slug}>
+                    <Image
+                      src={post.title_image}
+                      alt={post.title_image_description}
+                      width={500}
+                      height={300}
+                      className="rounded-xl group-hover:scale-105 transition-all duration-150"
+                    />
+                  </Link>
 
                   <div>
                     {post.category.map((category) => (
                       <Link href={`/tag/${category.slug}`} key={category.id}>
                         <button
                           key={category.id}
-                          className="bg-gray-200 px-2 text-sm rounded-xl font-normal border-blue-500 ms-2 mt-2 translate-y-5 hover:bg-gray-300 transition-all duration-200"
+                          className="bg-gray-200 px-2 text-sm rounded-xl font-normal border-blue-500 ms-2 mt-2 translate-y-5 hover:bg-gray-300 transition-all duration-200 text-black"
                         >
                           {category.name}
                         </button>
                       </Link>
                     ))}
                   </div>
-                  <div className="text-black">
-                    <h2 className="font-semibold text-2xl ms-4 mt-4 translate-y-2 group-hover:text-blue-500 transition-all duration-150">
+                  <Link href={post.slug} className="text-black no-underline">
+                    <h2 className="font-semibold text-2xl ms-4 mt-4 translate-y-2 group-hover:text-blue-500 transition-all duration-150 group-hover:scale-105">
                       {post.title}
                     </h2>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

@@ -81,9 +81,9 @@ export default function NavItem() {
   };
   
   return (
-    <div className="flex justify-center items-center">
+    
       <ul className="flex">
-        <span className="flex flex-col">
+        
           <button className="group relative" onClick={toggleMenu1}>
             <li className="mx-4 flex">
               <span className="transition-transform duration-300 group-hover:scale-110">
@@ -97,24 +97,24 @@ export default function NavItem() {
           </button>
 
           <ul
-            className={`absolute bg-slate-100 rounded-xl mt-10 z-10 py-2 px-4 ms-2 transform transition-all duration-300 ease-in-out ${
+            className={`absolute border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-4 transform transition-all duration-300 ease-in-out ${
               showMenu1
                 ? "opacity-100"
                 : "opacity-0 hidden"
             }`}
           >
-            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
-              <Link href="/ai-trends" onClick={closeAllMenus} className = "menu1">
+            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
+              <Link href="/ai-trends" onClick={closeAllMenus} className = "menu1 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500">
                 AI TRENDS 
               </Link>
             </li>
-            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
-              <Link href="/data-trends" onClick={closeAllMenus} className = "menu2">
+            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
+              <Link href="/data-trends" onClick={closeAllMenus} className = "menu2 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500">
                 DATA TRENDS
               </Link>
             </li>
           </ul>
-        </span>
+        
         <span className="flex flex-col">
           <button className="group relative" onClick={toggleMenu2}>
             <li className="mx-4 flex">
@@ -128,14 +128,14 @@ export default function NavItem() {
             </li>
           </button>
           <ul
-            className={`absolute bg-slate-100 rounded-xl  mt-10 z-10 py-2 px-4 -ms-2 transition-opacity duration-300 ease-in-out ${
+            className={`absolute border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-0 transform transition-all duration-300 ease-in-out ${
               showMenu2
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none hidden"
             }`}
           >
-            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
-              <Link href="/industry-analytics" onClick={closeAllMenus} className='menu3'>
+            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
+              <Link href="/industry-analytics" onClick={closeAllMenus} className='menu3 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 INDUSTRY ANALYTICS
               </Link>
             </li>
@@ -154,14 +154,14 @@ export default function NavItem() {
             </li>
           </button>
           <ul
-            className={`absolute ms-9 bg-slate-100 rounded-xl mt-10 z-10 py-2 px-4 transition-opacity duration-300 ease-in-out ${
+            className={`absolute border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-4 transform transition-all duration-300 ease-in-out ${
               showMenu3
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none hidden"
             }`}
           >
-            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
-              <Link href="/ai-software" onClick={closeAllMenus} className='menu4'>
+            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-4 group">
+              <Link href="/ai-software" onClick={closeAllMenus} className='menu4 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 AI SOFTWARE
               </Link>
             </li>
@@ -180,7 +180,7 @@ export default function NavItem() {
             </li>
           </button>
           <ul
-            className={`absolute me-3 bg-slate-100 rounded-xl mt-10 z-10 py-2 px-4 transition-opacity duration-300 ease-in-out ${
+            className={`absolute border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-3 transform transition-all duration-300 ease-in-out ${
               showMenu4
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none hidden"
@@ -202,39 +202,38 @@ export default function NavItem() {
             </li>
           </button>
           <ul
-            className={`absolute -ms-14 bg-slate-100 rounded-xl mt-10 z-10 py-2 px-4 transition-opacity duration-300 ease-in-out ${
+            className={`absolute border bg-white shadow-sm rounded-md mt-10 z-10 py-1 px-1 -ms-12 transform transition-all duration-300 ease-in-out ${
               showMenu5
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none hidden"
             }`}
           >
-            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
-              <Link href="/about-us" onClick={closeAllMenus} className='menu5'>
+            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
+              <Link href="/about-us" onClick={closeAllMenus} className='menu6 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 ABOUT US
               </Link>
-              
             </li>
-            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
-              <Link href="mailto:example@example.com?subject=Your Email Subject&body=Hello, this is the pre-filled body of the email." onClick={closeAllMenus} className='menu6'>
+            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
+              <Link href="mailto:example@example.com?subject=Your Email Subject&body=Hello, this is the pre-filled body of the email." onClick={closeAllMenus} className='menu6 text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 CONTACT US
               </Link>
             </li>
-            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
-              <Link href="/terms&conditions" onClick={closeAllMenus} className='menu7'>
+            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
+              <Link href="/terms&conditions" onClick={closeAllMenus} className='menu7 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 TERMS&CONDITIONS
               </Link>
               
             </li>
-            <li className="text-center text-sm py-2 font-bold text-gray-400 hover:text-black hover:underline transition-all duration-300">
-              <Link href="/privacy&policy" onClick={closeAllMenus} className='menu8'>
+            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
+              <Link href="/privacy&policy" onClick={closeAllMenus} className='menu8 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 PRIVACY&POLICY
               </Link>
-              
             </li>
           </ul>
         </span>
 
       </ul>
-    </div>
+      
+    
   );
 }
