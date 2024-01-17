@@ -5,7 +5,7 @@ export default function page() {
     <div className='container w-2/3'>
       
         <h1 className='font-bold text-4xl mt-32 text-center'>
-        Privacy Policy
+      PRIVACY POLICY
         </h1>
         <p className='mt-16 text-sm sm:text-xl lg:text-2xl'>
         This Privacy Policy document outlines the types of personal information that is received and collected by NomadVision.net and how it is used.
