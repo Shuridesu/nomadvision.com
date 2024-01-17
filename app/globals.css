@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Your+Font+Name&display=swap');
+
+
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+.border-part {
+    border-left: 8px solid rgb(65, 62, 62);
+    top: 12%;
+    bottom: 12%;
+  }
+
+
+/* custom.css */
+.clip-diagonal-r {
+    clip-path: polygon(0% 0%, 93% 0%, 100% 50%, 93% 100%, 0 100%);
+  }
+
+.clip-diagonal-l {
+    clip-path: polygon(0% 50%, 7% 0%, 100% 0%, 100% 100%, 7% 100%);
+}
