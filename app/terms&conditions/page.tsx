@@ -1,5 +1,11 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'Terms & Conditions',
+  description: 'Terms & Conditions | Nomad Vision',
+}
 
 export default function page() {
   return (

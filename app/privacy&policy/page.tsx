@@ -1,4 +1,12 @@
+import { Metadata } from 'next'
 import React from 'react'
+
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'Privacy Policy | Nomad Vision',
+}
+
 
 export default function page() {
   return (
