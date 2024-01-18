@@ -23,7 +23,7 @@ export default async function PostDetail({ promise }: Props) {
             <Image
               src={post.post.title_image}
               className="max-w-1/2 rounded-2xl"
-              alt={post.post.title_image_description}
+              alt={post.post.title}
               width={500}
               height={300}
             />
@@ -68,7 +68,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image1 && (
                 <Image
                   src={post.post.image1}
-                  alt={post.post.image1_description}
+                  alt={post.post.heading1}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}
@@ -86,7 +86,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image2 && (
                 <Image
                   src={post.post.image2}
-                  alt={post.post.image2_description}
+                  alt={post.post.heading2}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}
@@ -104,7 +104,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image3 && (
                 <Image
                   src={post.post.image3}
-                  alt={post.post.image3_description}
+                  alt={post.post.heading3}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}
@@ -122,7 +122,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image4 && (
                 <Image
                   src={post.post.image4}
-                  alt={post.post.image4_description}
+                  alt={post.post.heading4}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}
@@ -140,7 +140,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image5 && (
                 <Image
                   src={post.post.image5}
-                  alt={post.post.image5_description}
+                  alt={post.post.heading5}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}
@@ -158,7 +158,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image6 && (
                 <Image
                   src={post.post.image6}
-                  alt={post.post.image6_description}
+                  alt={post.post.heading6}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}
@@ -176,7 +176,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image7 && (
                 <Image
                   src={post.post.image7}
-                  alt={post.post.image7_description}
+                  alt={post.post.heading7}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}
@@ -194,7 +194,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image8 && (
                 <Image
                   src={post.post.image8}
-                  alt={post.post.image8_description}
+                  alt={post.post.heading8}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}
@@ -212,7 +212,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image9 && (
                 <Image
                   src={post.post.image9}
-                  alt={post.post.image9_description}
+                  alt={post.post.heading9}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}
@@ -230,7 +230,7 @@ export default async function PostDetail({ promise }: Props) {
               {post.post.image10 && (
                 <Image
                   src={post.post.image10}
-                  alt={post.post.image10_description}
+                  alt={post.post.heading10}
                   className="rounded-xl my-10"
                   width={500}
                   height={300}

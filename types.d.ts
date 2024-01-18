@@ -28,7 +28,7 @@ type Post = {
     "content8": string,
     "heading9": string,
     "content9": string,
-    "heading10": null,
+    "heading10": string,
     "content10": string,
     "pub_date": string,
     "title_image": string,
