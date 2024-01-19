@@ -3,6 +3,7 @@ import NavItem from "./NavItem";
 import Logo from "./Logo";
 import Link from "next/link";
 import SideBar from "./SideBar";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   return (
@@ -27,9 +28,9 @@ const Navbar = () => {
           <NavItem />
         </span>
 
-        <button className="hidden xl:btn btn-disabled btn-xs sm:btn-sm md:btn-md justify-end ms-auto me-8">
+        <Button className="bg-sky-900 py-4 font-bold text-base hover:bg-sky-700 me-10 ms-10 hidden xl:flex">
           JOIN US
-        </button>
+        </Button>
       </nav>
     </div>
   );

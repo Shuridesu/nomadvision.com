@@ -9,7 +9,7 @@ export default async function IndustryAnalytics() {
   const count = post.length;
   return (
     <div className="container mx-auto p-4 mt-24">
-      <div className="flex justify-center items-center pb-2 border-b-2">
+      <div className="flex justify-center items-center pb-2 border-b-2 border-gray-300">
         <span className="flex animate-pulse">
           <h1 className="font-bold text-2xl mt-6 mb-14">
             INDUSTRY ANALYTICS <button className = "btn btn-circle btn-xs mb-6">{count}</button>

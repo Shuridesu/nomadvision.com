@@ -5,15 +5,16 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 import React from 'react'
+import { Button } from "@/components/ui/button";
 
 export default function Carousel({children}:any) {
 
   function SampleNextArrow(props: any) {
     const { onClick } = props;
     return (
-      <button
+      <Button
         onClick={onClick}
-        className="absolute top-0 right-0 -translate-y-10 z-10   me-12"
+        className="absolute top-0 right-0 -translate-y-14 z-10 bg-gray-200 hover:bg-gray-300 py-4"
       >
         <svg
           width="24"
@@ -30,16 +31,16 @@ export default function Carousel({children}:any) {
             stroke-linejoin="round"
           />
         </svg>
-      </button>
+      </Button>
     );
   }
   
   function SamplePrevArrow(props: any) {
     const { onClick } = props;
     return (
-      <button
+      <Button
         onClick={onClick}
-        className="absolute top-0 right-0 -translate-y-10 z-10 pe-20"
+        className="absolute top-0 right-0 -translate-y-14 z-10 bg-gray-200 me-20 hover:bg-gray-300 py-4"
       >
         <svg
           width="24"
@@ -56,7 +57,7 @@ export default function Carousel({children}:any) {
             stroke-linejoin="round"
           />
         </svg>
-      </button>
+      </Button>
     );
   }
   const settings = {

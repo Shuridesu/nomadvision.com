@@ -287,7 +287,7 @@ export default async function PostDetail({ promise }: Props) {
                 </h1>
                 <Image
                   src={post.previous.title_image}
-                  alt={post.previous.title_image_description}
+                  alt={post.previous.title}
                   className="rounded-3xl mb-2 mt-6"
                   width={500}
                   height={300}
@@ -334,7 +334,7 @@ export default async function PostDetail({ promise }: Props) {
                 </h1>
                 <Image
                   src={post.next.title_image}
-                  alt={post.next.title_image_description}
+                  alt={post.next.title}
                   className="rounded-3xl mb-3 mt-6"
                   width={500}
                   height={300}

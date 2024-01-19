@@ -12,7 +12,7 @@ export default async function RecArticles() {
   return (
     <>
       <div className="p-4 mx-10 mt-24">
-        <div className="flex justify-start items-center pb-2 border-b-2 ms-4">
+        <div className="flex justify-start items-center pb-2 border-b-2 ms-4 border-gray-300">
           <span className="flex animate-bounce">
             <span className="translate-y-3">
               <RecommendedIcon />
@@ -30,7 +30,7 @@ export default async function RecArticles() {
                   <Link href={post.slug}>
                     <Image
                       src={post.title_image}
-                      alt={post.title_image_description}
+                      alt={post.title}
                       width={500}
                       height={300}
                       className="rounded-xl group-hover:scale-105 transition-all duration-150"

@@ -26,7 +26,7 @@ export default function RenderLatestArticles({ posts }: Props) {
               <Link href={post.slug}>
                 <Image
                   src={post.title_image}
-                  alt={post.title_image_description}
+                  alt={post.title}
                   width = {500}
                   height = {300}
                   className="rounded-xl group-hover:scale-105 transition-transform duration-150"
