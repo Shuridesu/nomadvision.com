@@ -23,14 +23,14 @@ export default function Footer() {
           </p>
         </aside>
         <nav>
-          <div className="grid grid-flow-col mt-6 ms-20">
+          <div className="mt-6 text-sm xl:ms-32">
             <Link href = "/signup" className = "text-gray-600">
-            <Button variant= "outline" className="text-lg py-4 ms-12 font-semibold">SIGN UP</Button>
+            <Button variant= "outline" className="py-4 font-semibold ms-14">SIGN UP</Button>
             </Link>
             
             
             <Link href="mailto:example@example.com?subject=shurikikuti@icloud.com Subject&body=Hello, this is the pre-filled body of the email." className="text-gray-600">
-              <Button variant= "outline" className="text-lg py-4 font-semibold">CONTACT US</Button>
+              <Button variant= "outline" className="py-4 font-semibold ms-4">CONTACT US</Button>
             </Link>
           </div>
         </nav>
