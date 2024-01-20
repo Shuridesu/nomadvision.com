@@ -1,10 +1,13 @@
-import getAllPosts from "@/lib/getAllPosts";
+
 import Link from "next/link";
 import React from "react";
 import LatestIcon from "../Icons/LatestIcon";
 import Image from "next/image";
 import RenderLatestArticles from "./RenderLatestArticles";
 import { motion } from "framer-motion";
+import { getAllPosts } from "@/lib/getPosts";
+
+
 export default async function LatestArticles() {
   const posts: Promise<Post[]> = getAllPosts();
   const post = await posts;

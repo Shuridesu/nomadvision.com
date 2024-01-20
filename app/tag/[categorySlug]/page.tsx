@@ -1,7 +1,5 @@
 import Card from "@/app/components/Card";
-import getAllCategories from "@/lib/getAllCategories";
-import getAllPosts from "@/lib/getAllPosts";
-import getCategoryPosts from "@/lib/getCategoryPosts";
+import { getAllCategories, getCategoryPosts } from "@/lib/getPosts";
 import React, { Suspense } from "react";
 
 type Params = {

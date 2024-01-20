@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import getRecPosts from "@/lib/getRecPosts";
+import { getRecPosts } from "@/lib/getPosts";
 import RecommendedIcon from "../Icons/RecommendedIcon";
 import Carousel from "./Carousel";
 import Image from "next/image";

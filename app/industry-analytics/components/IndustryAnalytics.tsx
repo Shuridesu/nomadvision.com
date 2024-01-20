@@ -1,5 +1,6 @@
 import Card from "@/app/components/Card";
-import getIndustryAnalyticsPosts from "@/lib/getIndustryAnalyticsPosts";
+import { getIndustryAnalyticsPosts } from "@/lib/getPosts";
+
 import Link from "next/link";
 import React from "react";
 

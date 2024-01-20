@@ -1,5 +1,6 @@
 import Card from "@/app/components/Card";
-import getAiTrendsPosts from "@/lib/getAiTrendsPosts";
+import { getAiTrendsPosts } from "@/lib/getPosts";
+
 import Link from "next/link";
 import React from "react";
 

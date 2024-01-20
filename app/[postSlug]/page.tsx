@@ -1,7 +1,7 @@
-import getPost from '@/lib/getPost'
+
 import React, { Suspense } from 'react'
 import PostDetail from './components/PostDetail'
-import getAllPosts from '@/lib/getAllPosts'
+import {getAllPosts, getPost} from '@/lib/getPosts'
 
 
 type Params = {

@@ -1,6 +1,7 @@
 
 import Card from "@/app/components/Card";
-import getAiSoftwarePosts from "@/lib/getAiSoftwarePosts";
+import { getAiSoftwarePosts } from "@/lib/getPosts";
+
 import React from "react";
 
 export default async function AiSoftware() {
