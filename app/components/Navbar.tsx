@@ -71,16 +71,16 @@ const Navbar = ({ user }: NavbarProps) => {
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            <div className="text-2xl mt-32 -translate-x-6 sm:translate-x-0">
+            <div className="text-2xl mt-32 ms-1 sm:translate-x-0">
               <NavItem />
 
               {user ? (
-                <div className="ms-10 mt-4">
+                <div className="mt-4 ms-2">
                   <UserNavigation user={user} />
                 </div>
               ) : (
                 <Link href="/signup" className="text-white no-underline">
-                  <Button className="bg-sky-900 py-4 font-bold text-base hover:bg-sky-700 ms-14 mt-3">
+                  <Button className="bg-sky-900 py-4 font-bold text-base hover:bg-sky-700 mt-4 ms-6">
                     JOIN US
                   </Button>
                 </Link>
