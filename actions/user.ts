@@ -5,45 +5,45 @@ const fetchAPI = async (url: string, options: RequestInit) => {
   const apiUrl = process.env.API_URL
 
   if (!apiUrl) {
-    return { success: false, error: "API URLが設定されていません" }
+    return { success: false, error: "No API" }
   }
 
   try {
     const response = await fetch(`${apiUrl}${url}`, options)
 
     if (!response.ok) {
-      return { success: false, error: "APIでエラーが発生しました" }
+      return { success: false, error: "failed to fetch" }
     }
 
-    // Content-Type ヘッダーが application/json の場合のみ、JSON を解析する
+    // if response is json, return json data
     const contentType = response.headers.get("Content-Type")
     if (contentType && contentType.includes("application/json")) {
       const data = await response.json()
       return { success: true, data }
     }
 
-    // データなしで成功を返す
+    // if response is not json, return response
     return { success: true }
   } catch (error) {
     console.error(error)
-    return { success: false, error: "ネットワークエラーが発生しました" }
+    return { success: false, error: "network error" }
   }
 }
 
-interface TemporarrySignupProps {
+interface TemporarySignupProps {
   name: string
   email: string
   password: string
   rePassword: string
 }
 
-// アカウント仮登録
-export const temporarrySignup = async ({
+// provisional signup
+export const temporarySignup = async ({
   name,
   email,
   password,
   rePassword,
-}: TemporarrySignupProps) => {
+}: TemporarySignupProps) => {
   const body = JSON.stringify({
     name,
     email,
@@ -59,7 +59,7 @@ export const temporarrySignup = async ({
     body,
   }
 
-  // アカウント仮登録を送信
+  // send provisional signup request
   const result = await fetchAPI("/api/auth/users/", options)
 
   if (!result.success) {
@@ -75,7 +75,7 @@ interface CompleteSignupProps {
   token: string
 }
 
-// アカウント本登録
+// final signup
 export const completeSignup = async ({ uid, token }: CompleteSignupProps) => {
   const body = JSON.stringify({
     uid,
@@ -90,7 +90,7 @@ export const completeSignup = async ({ uid, token }: CompleteSignupProps) => {
     body,
   }
 
-  // アカウント本登録を送信
+  // send final signup request
   const result = await fetchAPI("/api/auth/users/activation/", options)
 
   if (!result.success) {
@@ -105,7 +105,7 @@ interface ForgotPasswordProps {
   email: string
 }
 
-// パスワード再設定
+// password reset
 export const forgotPassword = async ({ email }: ForgotPasswordProps) => {
   const body = JSON.stringify({
     email,
@@ -119,7 +119,7 @@ export const forgotPassword = async ({ email }: ForgotPasswordProps) => {
     body,
   }
 
-  // パスワード再設定を送信
+  // send password reset request
   const result = await fetchAPI("/api/auth/users/reset_password/", options)
 
   if (!result.success) {
@@ -130,6 +130,7 @@ export const forgotPassword = async ({ email }: ForgotPasswordProps) => {
   return { success: true }
 }
 
+
 interface ResetPasswordProps {
   uid: string
   token: string
@@ -137,7 +138,7 @@ interface ResetPasswordProps {
   reNewPassword: string
 }
 
-// パスワード再設定確認
+// reset password
 export const resetPassword = async ({
   uid,
   token,
@@ -159,7 +160,7 @@ export const resetPassword = async ({
     body,
   }
 
-  // パスワード再設定確認を送信
+  // send reset password request
   const result = await fetchAPI(
     "/api/auth/users/reset_password_confirm/",
     options
@@ -186,14 +187,14 @@ interface GetUserDetailProps {
   userId: string
 }
 
-// ユーザー詳細取得
+// get user detail
 export const getUserDetail = async ({ userId }: GetUserDetailProps) => {
   const options: RequestInit = {
     method: "GET",
     cache: "no-store",
   }
 
-  // APIからユーザー詳細を取得
+  // send get user detail request
   const result = await fetchAPI(`/api/users/${userId}/`, options)
 
   if (!result.success) {
@@ -213,7 +214,7 @@ interface UpdateUserProps {
   avatar: string | undefined
 }
 
-// プロフィール編集
+// profile update
 export const updateUser = async ({
   accessToken,
   name,
@@ -235,7 +236,7 @@ export const updateUser = async ({
     body,
   }
 
-  // プロフィール編集を送信
+  // send profile update request
   const result = await fetchAPI("/api/auth/users/me/", options)
 
   if (!result.success) {
@@ -255,7 +256,7 @@ interface UpdatePasswordProps {
   reNewPassword: string
 }
 
-// パスワード変更
+// update password
 export const updatePassword = async ({
   accessToken,
   currentPassword,
@@ -277,7 +278,7 @@ export const updatePassword = async ({
     body,
   }
 
-  // パスワード変更を送信
+  //submit password update request
   const result = await fetchAPI("/api/auth/users/set_password/", options)
 
   if (!result.success) {

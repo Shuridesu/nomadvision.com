@@ -82,7 +82,7 @@ export default function NavItem() {
   
   return (
     
-      <ul className="flex">
+      <ul className="flex flex-col space-y-6 xl:space-y-0 xl:flex-row">
         
           <button className="group relative" onClick={toggleMenu1}>
             <li className="mx-4 flex">
@@ -97,7 +97,7 @@ export default function NavItem() {
           </button>
 
           <ul
-            className={`absolute border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-4 transform transition-all duration-300 ease-in-out ${
+            className={`absolute bg-white border shadow-sm rounded-md mt-10 translate-x-52 -translate-y-10 xl:translate-y-10 z-10 py-1 px-1 xl:translate-x-4 transform transition-all duration-300 ease-in-out ${
               showMenu1
                 ? "opacity-100"
                 : "opacity-0 hidden"
@@ -128,14 +128,14 @@ export default function NavItem() {
             </li>
           </button>
           <ul
-            className={`absolute border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-0 transform transition-all duration-300 ease-in-out ${
+            className={`absolute bg-white border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-0 translate-x-56 -translate-y-12 transform transition-all duration-300 ease-in-out xl:translate-x-9 xl:translate-y-0 ${
               showMenu2
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none hidden"
             }`}
           >
-            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
-              <Link href="/industry-analytics" onClick={closeAllMenus} className='menu3 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
+            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group max-w-[100px]">
+              <Link href="/industry-analytics" onClick={closeAllMenus} className='menu3 text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 INDUSTRY ANALYTICS
               </Link>
             </li>
@@ -154,13 +154,13 @@ export default function NavItem() {
             </li>
           </button>
           <ul
-            className={`absolute border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-4 transform transition-all duration-300 ease-in-out ${
+            className={`absolute bg-white translate-x-56 -translate-y-12 border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-4 transform transition-all duration-300 ease-in-out xl:translate-x-7 xl:translate-y-0 ${
               showMenu3
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none hidden"
             }`}
           >
-            <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-4 group">
+            <li className="flex justify-center text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-4 group max-w-[100px]">
               <Link href="/ai-software" onClick={closeAllMenus} className='menu4 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 AI SOFTWARE
               </Link>
@@ -180,14 +180,14 @@ export default function NavItem() {
             </li>
           </button>
           <ul
-            className={`absolute border shadow-sm rounded-md mt-10 z-10 py-1 px-1 ms-3 transform transition-all duration-300 ease-in-out ${
+            className={`absolute bg-white translate-x-44 -translate-y-12 border shadow-sm rounded-md mt-10 z-10 py-1 px-4 ms-3 transform transition-all duration-300 ease-in-out xl:-translate-x-2 xl:translate-y-0 ${
               showMenu4
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none hidden"
             }`}
           >
             <li className="text-start text-sm py-2 font-bold text-gray-400 max-w-[120px]">
-              <p>
+              <p className='mb-0'>
                 *COMING SOON
               </p>
             </li>
@@ -202,7 +202,7 @@ export default function NavItem() {
             </li>
           </button>
           <ul
-            className={`absolute border bg-white shadow-sm rounded-md mt-10 z-10 py-1 px-1 -ms-12 transform transition-all duration-300 ease-in-out ${
+            className={`absolute border bg-white translate-x-52 -translate-y-12 shadow-sm rounded-md mt-10 z-10 py-1 px-1 -ms-12 transform transition-all duration-300 ease-in-out xl:-translate-x-1 xl:translate-y-0 ${
               showMenu5
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none hidden"
@@ -231,6 +231,7 @@ export default function NavItem() {
             </li>
           </ul>
         </span>
+        
 
       </ul>
       

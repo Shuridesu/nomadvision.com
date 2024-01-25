@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
 export default function Hero() {
@@ -13,9 +14,11 @@ export default function Hero() {
             AND <span className="text-blue-900">NETWORKING COMMUNITY</span>{" "}
             CONVERGE
           </span>
-          <Button className="mt-8 w-1/2 py-7 text-xl font-extrabold bg-sky-900 text-white hover:bg-sky-700">
-            JOIN US
-          </Button>
+          <Link href="/signup" className="text-white no-underline">
+            <Button className="mt-8 w-1/2 py-7 text-xl font-extrabold bg-sky-900 text-white hover:bg-sky-700">
+              JOIN US
+            </Button>
+          </Link>
         </span>
       </div>
     </Fade>

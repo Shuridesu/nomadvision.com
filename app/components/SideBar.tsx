@@ -10,6 +10,11 @@ import ToolIcon2 from '../Icons/ToolIcon2';
 import Link from 'next/link';
 import OtherIcon2 from '../Icons/OtherIcon2';
 import LockIcon2 from '../Icons/LockIcon2';
+import { Button } from '@/components/ui/button';
+import UserNavigation from '@/components/auth/UserNavigation';
+import { UserType } from '@/lib/nextauth';
+
+
 
 export default function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,7 +75,7 @@ export default function SideBar() {
         onClick={() => setIsOpen(!isOpen)}
         className="relative xl:hidden mt-3 me-3 z-20"
       >
-        <MenuIcon /> {/* ハンバーガーメニューアイコン */}
+        <MenuIcon />
       </button>
       <div
         className={`absolute right-0 h-max pb-14 rounded-xl transform transition-transform duration-500 ease-in-out ${
@@ -173,6 +178,7 @@ export default function SideBar() {
               </li>
             </ul>
           </ul>
+          
         </div>
       </div>
     </div>

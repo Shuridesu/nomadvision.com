@@ -1,11 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
+    ],
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "2mb",
+    },
+  },
+}
 
 module.exports = nextConfig
-
-module.exports = {
-  images: {
-    domains: ['res.cloudinary.com'],
-  },
-  // その他の設定...
-}

@@ -2,7 +2,7 @@ import { getServerSession, type NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import type { JWT } from "next-auth/jwt"
 
-// NextAuthとJWTの型を拡張してアクセストークンとリフレッシュトークンを含める
+// expand session type to add accessToken and refreshToken
 declare module "next-auth" {
   interface Session {
     accessToken?: string
@@ -16,7 +16,7 @@ declare module "next-auth/jwt" {
   }
 }
 
-// ユーザー型の定義
+//define user type
 export interface UserType {
   accessToken: string
   uid: string
@@ -26,24 +26,24 @@ export interface UserType {
   introduction: string
 }
 
-// 共通のAPIリクエスト
+// common function to fetch API
 const fetchAPI = async (url: string, options: RequestInit) => {
   const apiUrl = process.env.API_URL
 
   if (!apiUrl) {
-    throw new Error("API URLが設定されていません")
+    throw new Error("No API_URL")
   }
 
   const response = await fetch(`${apiUrl}${url}`, options)
 
   if (!response.ok) {
-    throw new Error("APIでエラーが発生しました")
+    throw new Error("Failed to fetch API")
   }
 
   return response.json()
 }
 
-// アクセストークンの検証
+// verify access token
 const verifyAccessToken = async (token: JWT) => {
   return fetchAPI("/api/auth/jwt/verify/", {
     method: "POST",
@@ -52,7 +52,7 @@ const verifyAccessToken = async (token: JWT) => {
   }).then((res) => res.ok)
 }
 
-// アクセストークンの更新
+// refresh access token
 const refreshAccessToken = async (token: JWT) => {
   const { access } = await fetchAPI("/api/auth/jwt/refresh/", {
     method: "POST",
@@ -66,7 +66,7 @@ const refreshAccessToken = async (token: JWT) => {
   }
 }
 
-// ユーザー情報取得
+// authorize user
 const authorizeUser = async (email: string, password: string) => {
   const session = await fetchAPI("/api/auth/jwt/create/", {
     method: "POST",
@@ -88,29 +88,29 @@ const authorizeUser = async (email: string, password: string) => {
   }
 }
 
-// NextAuth設定
+// NextAuth options
 export const authOptions: NextAuthOptions = {
-  // 認証プロバイダーの設定
+  // options provider
   providers: [
-    // メールアドレス認証
+    // mail address verification
     CredentialsProvider({
       name: "credentials",
       credentials: {
-        // メールアドレスとパスワード
+        // mail address and password
         email: { label: "email", type: "text" },
         password: { label: "password", type: "password" },
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error("メールアドレスとパスワードを入力してください")
+          throw new Error("please type email and password")
         }
 
-        // ユーザー情報を取得
+        // authorize user
         return authorizeUser(credentials.email, credentials.password)
       },
     }),
   ],
-  // セッションの設定
+  // session options
   session: {
     strategy: "jwt",
   },
@@ -125,12 +125,12 @@ export const authOptions: NextAuthOptions = {
         }
       }
 
-      // アクセストークンの検証
+      // verify access token
       if (await verifyAccessToken(token)) {
         return token
       }
 
-      // アクセストークンの更新
+      // refresh access token
       return refreshAccessToken(token)
     },
     async session({ session, token }: { session: any; token: JWT }) {
@@ -141,7 +141,7 @@ export const authOptions: NextAuthOptions = {
   },
 }
 
-// 認証情報取得
+// get auth session
 export const getAuthSession = async () => {
   const session = await getServerSession(authOptions)
 
@@ -149,7 +149,7 @@ export const getAuthSession = async () => {
     return null
   }
 
-  // ユーザー情報を取得
+  // fetch user data
   const user = await fetchAPI("/api/auth/users/me/", {
     method: "GET",
     headers: {
