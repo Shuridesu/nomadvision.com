@@ -37,7 +37,7 @@ export default function Footer({user}:FooterProps) {
                   await signOut({ callbackUrl: "/" });
                 }}
                 variant="outline"
-                className="font-semibold ms-20 max-w-[20px] px-8 text-xs hover:text-red-500"
+                className="font-semibold ms-20 max-w-[20px] px-8 text-xs hover:text-red-500  lg:max-w-none lg:text-lg lg:h-14"
               >
                 LOGOUT
               </Button>

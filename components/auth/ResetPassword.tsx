@@ -101,7 +101,7 @@ const ResetPassword = ({ uid, token }: ResetPasswordProps) => {
           </div>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mx-3">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
               <FormField
                 control={form.control}
                 name="password"
