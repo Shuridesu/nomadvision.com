@@ -109,7 +109,7 @@ const ResetPassword = ({ uid, token }: ResetPasswordProps) => {
                   <FormItem>
                     <FormLabel>NEW PASSWORD</FormLabel>
                     <FormControl>
-                      <Input type="password" {...field} />
+                      <Input type="password" {...field} className="text-[16px]"/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -123,7 +123,7 @@ const ResetPassword = ({ uid, token }: ResetPasswordProps) => {
                   <FormItem>
                     <FormLabel>NEW PASSWORD(confirmation)</FormLabel>
                     <FormControl>
-                      <Input type="password" {...field} />
+                      <Input type="password" {...field} className="text-[16px]"/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>

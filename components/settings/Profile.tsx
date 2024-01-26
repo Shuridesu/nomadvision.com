@@ -155,7 +155,7 @@ const Profile = ({ user }: ProfileProps) => {
               <FormItem>
                 <FormLabel>NAME</FormLabel>
                 <FormControl>
-                  <Input placeholder="name" {...field} />
+                  <Input placeholder="name" {...field} className="text-[16px]"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -174,7 +174,7 @@ const Profile = ({ user }: ProfileProps) => {
               <FormItem>
                 <FormLabel>INTRODUCTION</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="introduction" {...field} rows={10} />
+                  <Textarea placeholder="introduction" {...field} rows={10} className="text-[16px]"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>

@@ -101,7 +101,7 @@ const Password = ({ user }: PasswordProps) => {
               <FormItem>
                 <FormLabel>CURRENT PASSWORD</FormLabel>
                 <FormControl>
-                  <Input type="password" {...field} />
+                  <Input type="password" {...field} className="text-[16px]"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -115,7 +115,7 @@ const Password = ({ user }: PasswordProps) => {
               <FormItem>
                 <FormLabel>NEW PASSWORD</FormLabel>
                 <FormControl>
-                  <Input type="password" {...field} />
+                  <Input type="password" {...field} className="text-[16px]"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -129,7 +129,7 @@ const Password = ({ user }: PasswordProps) => {
               <FormItem>
                 <FormLabel>NEW PASSWORD(CONFIRMATION)</FormLabel>
                 <FormControl>
-                  <Input type="password" {...field} />
+                  <Input type="password" {...field} className="text-[16px]"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
