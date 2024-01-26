@@ -133,7 +133,7 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>PASSWORD</FormLabel>
                     <FormControl>
-                      <Input type="password" {...field} />
+                      <Input type="password" {...field}/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
