@@ -93,7 +93,7 @@ const Password = ({ user }: PasswordProps) => {
       <div className="text-xl font-bold text-center mb-5 mt-10">CHANGE PASSWORD</div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mx-3">
           <FormField
             control={form.control}
             name="currentPassword"

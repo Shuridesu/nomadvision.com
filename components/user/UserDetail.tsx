@@ -10,7 +10,7 @@ interface UserDetailProps {
 // 投稿者詳細
 const UserDetail = ({ user }: UserDetailProps) => {
   return (
-    <div className = "border-4 w-1/2 mx-auto shadow-md mt-10">
+    <div className = "border-4 w-11/12 sm:w-1/2 mx-auto shadow-md mt-10">
         <div className = "text-center text-2xl font-bold text-gray-500 mt-6">
             PROFILE
         </div>

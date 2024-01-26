@@ -94,10 +94,10 @@ const Signup = () => {
         </>
       ) : (
         <>
-          <div className="text-2xl font-bold text-center mb-10 mt-10">REGISTRATION</div>
+          <div className="text-2xl font-bold text-center mb-10 mt-10">SIGN UP</div>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mx-3">
               <FormField
                 control={form.control}
                 name="name"
@@ -146,7 +146,7 @@ const Signup = () => {
 
               <Button disabled={isLoading} type="submit" className="w-full bg-sky-900 hover:bg-sky-700">
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                CREATE ACCOUNTS
+                CREATE ACCOUNT
               </Button>
             </form>
           </Form>

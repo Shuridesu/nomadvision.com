@@ -1,10 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { UserType } from "@/lib/nextauth";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
-export default function Hero() {
+interface HeroProps {
+  user: UserType | null;
+}
+
+export default function Hero({user}:HeroProps) {
   return (
     <Fade triggerOnce>
       <div className="relative w-full h-screen bg-[url('/a5.png')] bg-cover bg-right lg:bg-center">
@@ -14,11 +19,15 @@ export default function Hero() {
             AND <span className="text-blue-900">NETWORKING COMMUNITY</span>{" "}
             CONVERGE
           </span>
-          <Link href="/signup" className="text-white no-underline">
-            <Button className="mt-8 w-1/2 py-7 text-xl font-extrabold bg-sky-900 text-white hover:bg-sky-700">
-              JOIN US
-            </Button>
-          </Link>
+          {user ? (
+            <Button disabled className = "mt-8 w-1/2 py-7 text-xl font-extrabold bg-sky-900 text-white">PREMIUM</Button>
+          ) : (
+            <Link href="/signup" className="text-white no-underline">
+              <Button className="mt-8 w-1/2 py-7 text-xl font-extrabold bg-sky-900 text-white hover:bg-sky-700">
+                JOIN US
+              </Button>
+            </Link>
+          )}
         </span>
       </div>
     </Fade>

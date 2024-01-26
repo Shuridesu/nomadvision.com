@@ -74,7 +74,7 @@ const Login = () => {
       <div className="text-2xl font-bold text-center mb-10 mt-10">LOGIN</div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mx-3">
           <FormField
             control={form.control}
             name="email"

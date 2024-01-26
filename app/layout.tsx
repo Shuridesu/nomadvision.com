@@ -37,7 +37,7 @@ export default async function RootLayout(
           <div id="root">
             {children}
           </div>
-          <Footer />
+          <Footer user = {user}/>
           <Analytics />
           <SpeedInsights />
         </AuthProvider>

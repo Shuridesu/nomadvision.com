@@ -86,7 +86,7 @@ const ForgotPassword = () => {
           </div>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mx-3">
               <FormField
                 control={form.control}
                 name="email"

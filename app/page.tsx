@@ -4,6 +4,7 @@ import LatestArticles from "./components/LatestArticles";
 import RecArticles from "./components/RecArticles";
 
 import type { Metadata } from 'next'
+import { getAuthSession } from "@/lib/nextauth";
 
 export const metadata: Metadata = {
   title: 'Nomad Vision',
@@ -11,10 +12,13 @@ export const metadata: Metadata = {
 }
 
 
+
+
 export default async function HomePage() {
+  const user = await getAuthSession()
   return (
     <>
-    <Hero/>
+    <Hero user = {user}/>
     <LatestArticles/>
     <RecArticles/>
     </>
