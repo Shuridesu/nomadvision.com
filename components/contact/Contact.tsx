@@ -88,7 +88,7 @@ export default function Contact() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-8"
+              className="space-y-8 mx-3"
             >
               <FormField
                 control={form.control}
