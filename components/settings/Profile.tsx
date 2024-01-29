@@ -172,7 +172,7 @@ const Profile = ({ user }: ProfileProps) => {
             name="introduction"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>INTRODUCTION</FormLabel>
+                <FormLabel>BIO</FormLabel>
                 <FormControl>
                   <Textarea placeholder="introduction" {...field} rows={10} className="text-[16px]"/>
                 </FormControl>

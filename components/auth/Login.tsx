@@ -112,7 +112,7 @@ const Login = () => {
 
       <div className="text-center mt-5">
         <Link href="/reset-password" className="text-sm text-blue-500">
-          forget password?
+          forgot password?
         </Link>
       </div>
 

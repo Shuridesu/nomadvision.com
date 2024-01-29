@@ -288,3 +288,41 @@ export const updatePassword = async ({
 
   return { success: true }
 }
+
+interface contactUsProps {
+  name: string
+  email: string
+  message: string
+}
+
+
+export const contactUs = async ({
+  name,
+  email,
+  message,
+}: contactUsProps
+) => {
+  const body = JSON.stringify({
+    name,
+    email,
+    message,
+  })
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body,
+  }
+
+  // send contact us request
+  const result = await fetchAPI("/send-email/", options)
+
+  if (!result.success) {
+    console.error(result.error)
+    return { success: false }
+  }
+
+  return { success: true }
+}

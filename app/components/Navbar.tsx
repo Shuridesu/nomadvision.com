@@ -10,6 +10,8 @@ import { UserType } from "@/lib/nextauth";
 import UserNavigation from "@/components/auth/UserNavigation";
 import MenuIcon from "../Icons/MenuIcon";
 import { usePathname, useSearchParams } from "next/navigation";
+import SideBarItem from "./SideBarItem";
+import UserNavigation2 from "./UserNavigation2";
 
 
 
@@ -72,11 +74,11 @@ const Navbar = ({ user }: NavbarProps) => {
             }`}
           >
             <div className="text-2xl mt-32 ms-3">
-              <NavItem />
+              <SideBarItem/>
 
               {user ? (
-                <div className="mt-4">
-                  <UserNavigation user={user} />
+                <div className="mt-2 ms-7">
+                  <UserNavigation2 user={user} />
                 </div>
               ) : (
                 <Link href="/signup" className="text-white no-underline sm:ms-10">

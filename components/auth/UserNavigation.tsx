@@ -87,7 +87,7 @@ const UserNavigation = ({ user }: UserNavigationProps) => {
           className="text-center text-sm font-bold transition-all duration-300 hover:bg-gray-100 px-8 py-2 group no-underline text-gray-400 hover:text-red-500 cursor-pointer "
         >
           
-            LOGOUT
+            LOG OUT
           
         </div>
       </div>

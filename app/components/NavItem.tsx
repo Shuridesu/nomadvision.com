@@ -85,7 +85,7 @@ export default function NavItem() {
       <div className="flex flex-col space-y-6 xl:space-y-0 xl:flex-row">
         
           <button className="group relative" onClick={toggleMenu1}>
-            <li className="sm:ms-10 xl:mx-4 flex">
+            <li className="sm:ms-10 xl:mx-5 flex">
               <span className="transition-transform duration-300 group-hover:scale-110">
                 <TrendsIcon />
               </span>
@@ -117,7 +117,7 @@ export default function NavItem() {
         
         <span className="flex flex-col">
           <button className="group relative" onClick={toggleMenu2}>
-            <li className="sm:ms-10 xl:mx-4 flex">
+            <li className="sm:ms-10 xl:mx-5 flex">
               <span className="transition-transform duration-300 group-hover:scale-110">
                 <AnalyticsIcon />
               </span>
@@ -143,7 +143,7 @@ export default function NavItem() {
         </span>
         <span className="flex flex-col">
           <button className="group relative" onClick={toggleMenu3}>
-            <li className="sm:ms-10 xl:mx-4 flex">
+            <li className="sm:ms-10 xl:mx-5 flex">
               <span className="transition-transform duration-300 group-hover:scale-110">
                 <ToolIcon />
               </span>
@@ -169,7 +169,7 @@ export default function NavItem() {
         </span>
         <span className="flex flex-col">
           <button className="group relative" onClick={toggleMenu4}>
-            <li className="sm:ms-10 xl:mx-4 flex">
+            <li className="sm:ms-10 xl:mx-5 flex">
               <span className="transition-transform duration-300 group-hover:scale-110">
                 <LockedIcon />
               </span>
@@ -195,14 +195,14 @@ export default function NavItem() {
         </span>
         <span className="flex flex-col">
           <button className="group relative" onClick={toggleMenu5}>
-            <li className="sm:ms-10 xl:mx-4 flex">
+            <li className="sm:ms-10 xl:mx-5 flex">
               <span className="transition-transform duration-300 group-hover:scale-110">
                 <OtherIcon/>
               </span>
             </li>
           </button>
           <ul
-            className={`absolute border bg-white translate-x-52 -translate-y-12 shadow-sm rounded-md mt-10 z-10 py-1 px-1 -ms-12 transform transition-all duration-300 ease-in-out xl:translate-x-2 xl:translate-y-0 ${
+            className={`absolute border bg-white translate-x-52 -translate-y-12 shadow-sm rounded-md mt-10 z-10 py-1 px-1 -ms-16 transform transition-all duration-300 ease-in-out xl:translate-x-2 xl:translate-y-0 ${
               showMenu5
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none hidden"
@@ -222,7 +222,6 @@ export default function NavItem() {
               <Link href="/terms&conditions" onClick={closeAllMenus} className='menu7 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 TERMS&CONDITIONS
               </Link>
-              
             </li>
             <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
               <Link href="/privacy&policy" onClick={closeAllMenus} className='menu8 block text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
