@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import AiTrendsArticles from './components/AiTrendsArticles'
 import type { Metadata } from 'next'
+import Loading from '@/components/Loading'
 
 
 
@@ -15,9 +16,7 @@ export default function AiTrendsPage() {
     <div>
       <Suspense
         fallback={
-          <div className="flex justify-center items-center h-screen">
-            <div className="loading loading-bars loading-lg"></div>
-          </div>
+            <Loading/>
         }
       >
         <AiTrendsArticles/>

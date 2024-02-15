@@ -16,6 +16,7 @@ interface UserNavigationProps {
 const UserNavigation = ({ user }: UserNavigationProps) => {
   const [show, setShow] = useState(false);
   const toggleShow = () => setShow(!show);
+
   useEffect(() => {
     const closeMenusOnClickOutside = (event:any) => {
       
@@ -34,6 +35,7 @@ const UserNavigation = ({ user }: UserNavigationProps) => {
     };
 
   }, [show]);
+  
   const closeMenu = () => setShow(false);
   
   return (

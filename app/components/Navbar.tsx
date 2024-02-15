@@ -9,9 +9,13 @@ import { Button } from "@/components/ui/button";
 import { UserType } from "@/lib/nextauth";
 import UserNavigation from "@/components/auth/UserNavigation";
 import MenuIcon from "../Icons/MenuIcon";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import SideBarItem from "./SideBarItem";
-import UserNavigation2 from "./UserNavigation2";
+import SearchForm from "../search/components/SearchForm";
+import CrossIcon3 from "../Icons/CrossIcon3";
+import CrossIcon2 from "../Icons/CrossIcon2";
+import Hamburger from "hamburger-react";
+
 
 
 
@@ -23,9 +27,13 @@ interface NavbarProps {
 
 const Navbar = ({ user }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  }
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+
   useEffect(() => {
     setIsOpen(false); // Close the sidebar
   }, [pathname, searchParams]);
@@ -48,6 +56,9 @@ const Navbar = ({ user }: NavbarProps) => {
         >
           <NavItem />
         </div>
+
+        <SearchForm />
+
         {user ? (
           <div className="ms-20 me-16 hidden xl:flex">
             <UserNavigation user={user} />
@@ -62,10 +73,14 @@ const Navbar = ({ user }: NavbarProps) => {
 
         {/* sidebar */}
         <div
-          className="fixed xl:hidden right-6 z-50 cursor-pointer"
+          className="fixed xl:hidden right-4 z-50 cursor-pointer"
           onClick={toggleMenu}
         >
-          <MenuIcon />
+          <div
+            className="flex items-center justify-center w-14 h-14 rounded-2xl bg-sky-900 text-white"
+          >
+            <Hamburger toggled={isOpen} toggle={setIsOpen} />
+          </div>
         </div>
         <div className="absolute top-0">
           <div
@@ -74,19 +89,7 @@ const Navbar = ({ user }: NavbarProps) => {
             }`}
           >
             <div className="text-2xl mt-32 ms-3">
-              <SideBarItem/>
-
-              {user ? (
-                <div className="mt-2 ms-7">
-                  <UserNavigation2 user={user} />
-                </div>
-              ) : (
-                <Link href="/signup" className="text-white no-underline sm:ms-10">
-                  <Button className="bg-sky-900 py-4 font-bold text-base hover:bg-sky-700 mt-5">
-                    JOIN US
-                  </Button>
-                </Link>
-              )}
+              <SideBarItem user={user}/>
             </div>
           </div>
         </div>

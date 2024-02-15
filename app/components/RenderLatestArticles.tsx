@@ -1,6 +1,7 @@
 "use client";
 
 
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -55,12 +56,12 @@ export default function RenderLatestArticles({ posts }: Props) {
       </div>
       {postNum < posts.length && (
         <div className="flex justify-center items-center mt-20 animate-pulse">
-          <button
+          <Button
             onClick={handleClick}
-            className="btn btn-lg rounded-xl bg-sky-900 text-white"
+            className="bg-sky-900 text-white hover:bg-sky-700 text-2xl font-semibold py-8 px-4 rounded-lg"
           >
             READ MORE
-          </button>
+          </Button>
         </div>
       )}
      </Fade>

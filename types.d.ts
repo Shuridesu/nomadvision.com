@@ -51,6 +51,7 @@ type Post = {
     "is_ai_software": boolean,
     "author": 1
     "category": Category[]
+    "sponsor_link":string,
 }
 
 type PostDetail = {

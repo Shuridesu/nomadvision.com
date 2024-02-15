@@ -1,4 +1,5 @@
 import Card from "@/app/components/Card";
+import Loading from "@/components/Loading";
 import { getAllCategories, getCategoryPosts } from "@/lib/getPosts";
 import React, { Suspense } from "react";
 
@@ -19,9 +20,7 @@ export default async function CategoryPage({
     <>
       <Suspense
         fallback={
-          <div className="flex justify-center items-center h-screen">
-            <div className="loading loading-bars loading-lg"></div>
-          </div>
+          <Loading/>
         }
       >
         <div className="container mx-auto p-4 mt-24">

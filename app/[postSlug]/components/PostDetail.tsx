@@ -1,7 +1,9 @@
 import CopyIcon from "@/app/Icons/CopyIcon";
 import LinkedIcon from "@/app/Icons/LinkedIn";
+import TryIcon from "@/app/Icons/TryIcon";
 import TelegramIcon from "@/app/Icons/telegramIcon";
 import TwitterIcon from "@/app/Icons/twitterIcon";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -19,7 +21,7 @@ export default async function PostDetail({ promise }: Props) {
       <article className="container p-4 mt-14">
         {/* article title */}
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <figure className="flex items-center justify-center ms-10 me-10 xl:me-0 max-w-[500px]">
+          <figure className="flex items-center justify-center ms-14 me-16 xl:me-10 max-w-[500px]">
             <Image
               src={post.post.title_image}
               className="max-w-1/2 rounded-2xl"
@@ -28,25 +30,44 @@ export default async function PostDetail({ promise }: Props) {
               height={300}
             />
           </figure>
-          <div className="text-black lg:max-w-[500px]">
+          <div className="text-black lg:max-w-[500px] ms-16">
             <h2 className="font-bold text-4xl mt-12 lg:mt-4 translate-y-2 mb-4">
               {post.post.title}
             </h2>
             {post.post.category.map((category) => (
-                  <Link href={`/tag/${category.slug}`} key={category.id}>
-                    <button
-                      key={category.id}
-                      className=" bg-gray-200 px-2 text-sm rounded-xl font-normal border-blue-500 mt-2 hover:bg-gray-300 transition-all duration-200 me-2"
-                    >
-                      {category.name}
-                    </button>
-                  </Link>
-                ))}
+              <Link href={`/tag/${category.slug}`} key={category.id}>
+                <button
+                  key={category.id}
+                  className=" bg-gray-200 px-2 text-sm rounded-xl font-normal border-blue-500 mt-2 hover:bg-gray-300 transition-all duration-200 me-2"
+                >
+                  {category.name}
+                </button>
+              </Link>
+            ))}
             <h3 className="font-medium text-2xl mt-4 translate-y-2">
               {post.post.subtitle}
             </h3>
+            <div className="mt-8">
+              {post.post.sponsor_link && (
+                <Link href={post.post.sponsor_link} className="" target="_blank">
+                  <Button className="font-bold text-base bg-slate-50 hover:bg-slate-950 hover:text-white text-gray-400 group h-8 shadow-md border">
+                    TRY THIS
+                    <span className ="ms-3 group-hover:translate-x-2 transition-all duration-300">
+                      <TryIcon />
+                    </span>
+                  </Button>
+                </Link>
+              )}
+            </div>
+
             <div className="flex text-gray-400 mt-6 items-center">
-              <Image src="/af.png" alt="avtandil" width={55} height={50} className="rounded-full h-full"/>
+              <Image
+                src="/af.png"
+                alt="avtandil"
+                width={55}
+                height={50}
+                className="rounded-full h-full"
+              />
               <ul className="mt-2 ms-6">
                 <li className="text-black text-xl">Avtandil Abdyrakhmanov</li>
                 <li className="">Founder&Author | {post.post.pub_date}</li>
@@ -62,7 +83,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading1}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image1 && (
@@ -80,7 +101,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading2}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm my-14">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image2 && (
@@ -98,7 +119,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading3}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image3 && (
@@ -116,7 +137,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading4}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image4 && (
@@ -134,7 +155,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading5}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image5 && (
@@ -152,7 +173,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading6}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image6 && (
@@ -170,7 +191,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading7}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image7 && (
@@ -188,7 +209,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading8}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image8 && (
@@ -206,7 +227,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading9}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image9 && (
@@ -224,7 +245,7 @@ export default async function PostDetail({ promise }: Props) {
             <h1 className="font-semibold mt-8 text-3xl text-center">
               {post.post.heading10}
             </h1>
-            
+
             <div className="relative mx-auto max-w-sm mt-8">
               <div className="border-part absolute -left-20 rounded-md" />
               {post.post.image10 && (
@@ -271,11 +292,10 @@ export default async function PostDetail({ promise }: Props) {
               </span>
             </div>
           </div>
-
         </div>
 
         {/* next and previous articles */}
-        <div className="grid grid-cols-1 max-w-[800px] mx-auto lg:grid-cols-2 gap-32 mt-24">
+        <div className="grid grid-cols-1 max-w-[800px] mx-auto sm:grid-cols-2 gap-32 mt-24">
           {post.previous ? (
             <Link
               href={post.previous.slug}
@@ -371,7 +391,6 @@ export default async function PostDetail({ promise }: Props) {
             </Link>
           )}
         </div>
-        
       </article>
     </>
   );

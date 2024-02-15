@@ -14,7 +14,7 @@ export default function Carousel({children}:any) {
     return (
       <Button
         onClick={onClick}
-        className="absolute top-0 right-0 -translate-y-14 z-10 bg-gray-200 hover:bg-gray-300 py-4"
+        className="absolute text-gray-400 hover:text-gray-500 top-0 right-0 -translate-y-14 z-10 bg-gray-200 hover:bg-gray-300 py-4"
       >
         <svg
           width="24"
@@ -40,7 +40,7 @@ export default function Carousel({children}:any) {
     return (
       <Button
         onClick={onClick}
-        className="absolute top-0 right-0 -translate-y-14 z-10 bg-gray-200 me-20 hover:bg-gray-300 py-4"
+        className="absolute text-gray-400 hover:text-gray-500 top-0 right-0 -translate-y-14 z-10 bg-gray-200 me-20 hover:bg-gray-300 py-4"
       >
         <svg
           width="24"

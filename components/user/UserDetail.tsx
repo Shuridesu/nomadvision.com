@@ -11,10 +11,7 @@ interface UserDetailProps {
 const UserDetail = ({ user }: UserDetailProps) => {
   return (
     <div className = "border-4 w-11/12 sm:w-1/2 mx-auto shadow-md mt-10">
-        <div className = "text-center text-2xl font-bold text-gray-500 mt-6">
-            PROFILE
-        </div>
-      <div className="flex justify-center mb-5 mt-10">
+      <div className="flex justify-center mb-5 mt-20">
         <div className="relative w-40 h-40 flex-shrink-0">
           <Image
             src={user.avatar || "/default.png"}

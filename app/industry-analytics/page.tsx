@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import IndustryAnalytics from './components/IndustryAnalytics'
 import type { Metadata } from 'next'
+import Loading from '@/components/Loading'
 
 export const metadata: Metadata = {
   title: 'Industry Analytics',
@@ -13,9 +14,7 @@ export default function IndustryAnalyticsPage() {
     <div>
       <Suspense
         fallback={
-          <div className="flex justify-center items-center h-screen">
-            <div className="loading loading-bars loading-lg"></div>
-          </div>
+          <Loading/>
         }
       >
         <IndustryAnalytics />

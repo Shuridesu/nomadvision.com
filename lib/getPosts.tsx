@@ -1,7 +1,7 @@
 import React from 'react'
 
 const fetchAPI = async (url: string, options: RequestInit) => {
-  const apiUrl = process.env.API_URL
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
   if (!apiUrl) {
     throw new Error("No API_URL")
@@ -61,4 +61,7 @@ export async function getCategoryPosts(categorySlug:string) {
     return data
 }
 
-
+export async function getSearchPosts(query:string) {
+    const data = await fetchAPI(`/search/?q=${query}`,{next:{revalidate:10}})
+    return data
+}

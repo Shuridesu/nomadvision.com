@@ -2,6 +2,7 @@ import React, { Suspense } from 'react'
 import DataTrends from './components/DataTrends'
 
 import type { Metadata } from 'next'
+import Loading from '@/components/Loading'
 
 export const metadata: Metadata = {
   title: 'Data Trends',
@@ -13,9 +14,7 @@ export default function DataTrendsPage() {
     <div>
       <Suspense
         fallback={
-          <div className="flex justify-center items-center h-screen">
-            <div className="loading loading-bars loading-lg"></div>
-          </div>
+          <Loading/>
         }
       >
         <DataTrends />

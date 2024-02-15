@@ -326,3 +326,29 @@ export const contactUs = async ({
 
   return { success: true }
 }
+
+
+interface QueryProps {
+  query: string
+}
+
+//get articles by search query
+export const getArticlesBySearchQuery = async ({ query }: QueryProps) => {
+  const options: RequestInit = {
+    method: "GET",
+    cache: "no-store",
+  }
+
+  // send get articles by search query request
+  const result = await fetchAPI(`search/?q=${query}`, options)
+
+  if (!result.success) {
+    console.error(result.error)
+    return {posts:null}
+  }
+
+  const posts:Promise<Post[]> = result.data
+
+  return posts
+}
+
