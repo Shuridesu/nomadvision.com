@@ -1,6 +1,7 @@
 import Loading from "@/components/Loading";
 import Menu from "./components/Menu";
 import TryIcon from "../Icons/TryIcon";
+import JoinIcon from "../Icons/JoinIcon";
 
 export default async function page() {
   return (
@@ -15,6 +16,9 @@ export default async function page() {
       </div>
       <div>
         <TryIcon/>
+      </div>
+      <div>
+        <JoinIcon/>
       </div>
     </div>
   );

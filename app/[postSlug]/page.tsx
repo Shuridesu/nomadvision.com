@@ -40,8 +40,14 @@ export default async function PostPage({ params: { postSlug } }: Params) {
     <>
       <Suspense
         fallback={
-          <div className="flex justify-center items-center h-screen">
-            <div className="loading loading-bars loading-lg"></div>
+          <div className="flex flex-col justify-center items-center h-[70vh]">
+            <div className="flex flex-col justify-center items-center h-[70vh]">
+              <div
+                className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                role="status"
+              ></div>
+              <div className="text-gray-500 ms-2 mt-2">Loading...</div>
+            </div>
           </div>
         }
       >
@@ -49,11 +55,9 @@ export default async function PostPage({ params: { postSlug } }: Params) {
         <hr className="w-3/5 mx-auto mt-20" />
 
         {user ? (
-          
-            <div className="">
-              <CommentForm user={user} postSlug={postSlug}/>
-            </div>
-          
+          <div className="">
+            <CommentForm user={user} postSlug={postSlug} />
+          </div>
         ) : (
           <>
             <div className="w-11/12 sm:w-3/5 mx-auto shadow-md px-10 py-10 mt-24 border">

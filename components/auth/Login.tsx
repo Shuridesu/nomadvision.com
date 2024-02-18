@@ -18,6 +18,9 @@ import { Loader2 } from "lucide-react"
 import { signIn } from "next-auth/react"
 import toast from "react-hot-toast"
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
+import path from "path"
+
 
 //define input validation rules
 const schema = z.object({
@@ -31,7 +34,7 @@ type InputType = z.infer<typeof schema>
 //login
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false)
-
+  const pathName = usePathname()
   // form state
   const form = useForm<InputType>({
     // verify input
@@ -58,7 +61,12 @@ const Login = () => {
           toast.error("failed to login")
         } else {
           // login success
-          window.location.href = "/"
+          if(pathName === "/login"){
+            window.location.href = "/"
+          }else{
+            window.location.href = `${pathName}/`
+          }
+          
         }
       })
       .catch((error) => {

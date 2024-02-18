@@ -190,7 +190,7 @@ export default function CommentForm({ user, postSlug }: CommentFormProps) {
                     <Image
                       src={comment.user.avatar || "/default.png"}
                       alt="User avatar"
-                      className="w-10 h-10 rounded-full"
+                      className="w-10 h-10 rounded-full border"
                       width={40}
                       height={40}
                     />
@@ -206,7 +206,7 @@ export default function CommentForm({ user, postSlug }: CommentFormProps) {
                         <>
                           <div
                             onClick={() => toggleCommentMenu(comment.id)}
-                            className="menu"
+                            className="menu w-max cursor-pointer"
                           >
                             <CommentToggleIcon />
                           </div>
@@ -288,20 +288,23 @@ export default function CommentForm({ user, postSlug }: CommentFormProps) {
               ))}
             </ul>
           ) : (
-            <div className = "flex justify-center items-center mt-20">
-              <div className = "font-semibold text-gray-400 text-lg underline">No comments yet.</div>
+            <div className="flex justify-center items-center mt-20">
+              <div className="font-semibold text-gray-400 text-lg underline">
+                No comments yet.
+              </div>
             </div>
           )}
         </div>
         {!editingCommentId && (
-          <div className="flex items-start justify-center space-x-6 mt-20 w-full">
+          <div className="flex justify-center space-x-4 mt-20 w-full">
             <Image
               src={user.avatar || "/default.png"}
-              alt="avater"
-              width={50}
-              height={50}
-              className="rounded-full"
+              alt="User avatar"
+              className="rounded-full border w-10 h-10 sm:w-16 sm:h-16"
+              width={30}
+              height={30}
             />
+
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -316,7 +319,7 @@ export default function CommentForm({ user, postSlug }: CommentFormProps) {
                       <Textarea
                         {...field}
                         placeholder="comment.."
-                        className={`item w-72 sm:w-[550px] focus-visible:ring-3 text-lg drop-shadow-md min-h-[10px] duration-300 transition-all ${
+                        className={`item w-60 sm:w-[400px] md:w-[550px] focus-visible:ring-3 text-lg drop-shadow-md min-h-[10px] duration-300 transition-all ${
                           open ? " h-44" : "h-14"
                         }`}
                         onClick={(e) => {

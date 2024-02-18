@@ -9,6 +9,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import ToastProvider from '@/components/providers/ToastProvider'
 import AuthProvider from '@/components/providers/AuthProvider'
 import { getAuthSession } from '@/lib/nextauth'
+import { Button } from '@/components/ui/button'
+import SignUpButton from './components/SignUpButton'
+import Link from 'next/link'
+import UserButton from './components/UserButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,12 +36,14 @@ export default async function RootLayout(
       ></meta>
       <body className={inter.className}>
         <AuthProvider>
-          <Navbar user = {user} />
+          <Navbar user={user} />
           <ToastProvider />
-          <div id="root">
-            {children}
+          <div id="root">{children}</div>
+          <div className="fixed bottom-8 right-8 z-50">
+            {user ? <UserButton user={user} /> : <SignUpButton />}
           </div>
-          <Footer user = {user}/>
+
+          <Footer user={user} />
           <Analytics />
           <SpeedInsights />
         </AuthProvider>

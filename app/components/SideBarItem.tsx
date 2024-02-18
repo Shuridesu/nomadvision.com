@@ -330,8 +330,8 @@ export default function SideBarItem({user}:SideBarItemProps) {
           </div>
         </div>
       ) : (
-        <Link href="/signup" className="text-white no-underline ms-10">
-          <Button className="bg-sky-900 py-4 font-bold text-base hover:bg-sky-700 mt-5">
+        <Link href="/signup" className="text-white no-underline">
+          <Button className="bg-sky-900 py-4 font-bold text-base hover:bg-sky-700 mt-2">
             JOIN US
           </Button>
         </Link>
