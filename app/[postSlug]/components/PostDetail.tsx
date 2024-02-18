@@ -4,17 +4,21 @@ import TryIcon from "@/app/Icons/TryIcon";
 import TelegramIcon from "@/app/Icons/telegramIcon";
 import TwitterIcon from "@/app/Icons/twitterIcon";
 import { Button } from "@/components/ui/button";
+import { UserType } from "@/lib/nextauth";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import CommentForm from "./CommentForm";
+import Comment from "./Comment";
 
 type Props = {
 
   promise: Promise<PostDetail>;
-  
+  user: UserType|null;
+  postSlug: string;
 };
 
-export default async function PostDetail({ promise }: Props) {
+export default async function PostDetail({ promise,user,postSlug }: Props) {
   const post = await promise;
   return (
     <>
@@ -294,8 +298,25 @@ export default async function PostDetail({ promise }: Props) {
           </div>
         </div>
 
+        <hr className="w-4/5 mx-auto" />
+
+        {user ? (
+          <div className="">
+            <CommentForm user={user} postSlug={postSlug} />
+          </div>
+        ) : (
+          <>
+            <div className="w-11/12 sm:w-3/5 mx-auto shadow-md px-10 py-10 mt-24 border">
+              <div className="flex items-center justify-center">
+                <div className="font-bold text-2xl ms-2">MEMBER DISCUSSION</div>
+              </div>
+              <Comment />
+            </div>
+          </>
+        )}
+
         {/* next and previous articles */}
-        <div className="grid grid-cols-1 max-w-[800px] mx-auto sm:grid-cols-2 gap-32 mt-24">
+        <div className="grid grid-cols-1 max-w-[800px] mx-auto sm:grid-cols-2 gap-32 mt-40">
           {post.previous ? (
             <Link
               href={post.previous.slug}
