@@ -18,6 +18,7 @@ type Params = {
   };
 };
 
+
 export async function generateStaticParams() {
   const postsData: Promise<Post[]> = getAllPosts();
   const posts = await postsData;
