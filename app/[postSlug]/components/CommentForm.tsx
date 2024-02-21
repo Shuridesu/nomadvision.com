@@ -301,8 +301,8 @@ export default function CommentForm({ user, postSlug }: CommentFormProps) {
               src={user.avatar || "/default.png"}
               alt="User avatar"
               className="rounded-full border w-10 h-10 sm:w-16 sm:h-16"
-              width={30}
-              height={30}
+              width={64}
+              height={64}
             />
 
             <Form {...form}>
