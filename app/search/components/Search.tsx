@@ -8,13 +8,14 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 
 export default function SearchResult() {
-  const [posts,setPosts] = useState([])
+  const [posts,setPosts] = useState<Post[]>([])
   const searchParams = useSearchParams()
   const query = searchParams.get('q')||'';
   useEffect(()=>{
     async function fetchPosts(){
       const posts = await getSearchPosts(query)
-      setPosts(posts);
+      const post = posts.posts
+      setPosts(post);
     }
     fetchPosts();
   },[query]);

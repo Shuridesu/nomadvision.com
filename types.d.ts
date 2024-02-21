@@ -59,3 +59,8 @@ type PostDetail = {
     previous?: Post; // 一つ前の記事は存在しない場合もあるため、オプショナルにする
     next?: Post;     // 一つ先の記事は存在しない場合もあるため、オプショナルにする
   }
+
+type PostList = {
+    posts: Post[];
+    categories: Category[];
+}
