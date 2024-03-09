@@ -94,10 +94,15 @@ const Signup = () => {
         </>
       ) : (
         <>
-          <div className="text-2xl font-bold text-center mb-10 mt-10">SIGN UP</div>
+          <div className="text-2xl font-bold text-center mb-10 mt-10">
+            SIGN UP
+          </div>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mx-3">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-5 mx-3"
+            >
               <FormField
                 control={form.control}
                 name="name"
@@ -105,7 +110,11 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>NAME</FormLabel>
                     <FormControl>
-                      <Input placeholder="name" {...field} className="text-[16px]"/>
+                      <Input
+                        placeholder="name"
+                        {...field}
+                        className="text-[16px]"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -119,7 +128,11 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>MAIL ADDRESS</FormLabel>
                     <FormControl>
-                      <Input placeholder="xxxx@gmail.com" {...field} className="text-[16px]"/>
+                      <Input
+                        placeholder="xxxx@gmail.com"
+                        {...field}
+                        className="text-[16px]"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -133,7 +146,11 @@ const Signup = () => {
                   <FormItem>
                     <FormLabel>PASSWORD</FormLabel>
                     <FormControl>
-                      <Input type="password" {...field} className="text-[16px]"/>
+                      <Input
+                        type="password"
+                        {...field}
+                        className="text-[16px]"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -141,10 +158,15 @@ const Signup = () => {
               />
 
               <div className="text-sm text-gray-500">
-              By signing up, you agree to the Terms of Service and Privacy Policy.
+                By signing up, you agree to the Terms of Service and Privacy
+                Policy.
               </div>
 
-              <Button disabled={isLoading} type="submit" className="w-full bg-sky-900 hover:bg-sky-700">
+              <Button
+                disabled={isLoading}
+                type="submit"
+                className="w-full bg-sky-900 hover:bg-sky-700"
+              >
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 CREATE ACCOUNT
               </Button>
@@ -153,7 +175,7 @@ const Signup = () => {
 
           <div className="text-center mt-5">
             <Link href="/login" className="text-sm text-blue-500">
-            Already have an account?
+              Already have an account?
             </Link>
           </div>
         </>

@@ -1,4 +1,5 @@
 import Card from "@/app/components/Card";
+import { Button } from "@/components/ui/button";
 import { getIndustryAnalyticsPosts } from "@/lib/getPosts";
 
 import Link from "next/link";
@@ -13,7 +14,10 @@ export default async function IndustryAnalytics() {
       <div className="flex justify-center items-center pb-2 border-b-2 border-gray-300">
         <span className="flex animate-pulse">
           <h1 className="font-bold text-2xl mt-6 mb-14">
-            INDUSTRY ANALYTICS <button className = "btn btn-circle btn-xs mb-6">{count}</button>
+            INDUSTRY ANALYTICS{" "}
+            <Button className="h-10 w-10 rounded-full px-0 text-lg font-bold -translate-y-4 ms-2 text-black bg-white border-2 pointer-events-none">
+              {count}
+            </Button>
           </h1>
         </span>
       </div>

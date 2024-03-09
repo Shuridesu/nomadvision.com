@@ -31,7 +31,7 @@ export default function SearchResult() {
           <h1 className="font-bold text-4xl mt-6 mb-14">
             <span className="text-slate-500">Search Result for </span>
             <span className="text-blue-400">{query}</span>
-            <Button className="h-10 w-10 rounded-full px-0 text-lg font-bold -translate-y-4 ms-2 text-black bg-white border-2">
+            <Button className="h-10 w-10 rounded-full px-0 text-lg font-bold -translate-y-4 ms-2 text-black bg-white border-2 pointer-events-none">
               {count}
             </Button>
           </h1>
