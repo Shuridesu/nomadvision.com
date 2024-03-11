@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <div className='md:w-2/3 md:mx-auto mx-3 text-center'>
+    <div className='md:w-2/3 md:mx-auto text-center'>
       
         <h1 className='font-bold text-4xl mt-32 text-center'>
           ABOUT US
