@@ -214,7 +214,7 @@ export default function NavItem() {
               </Link>
             </li>
             <li className="text-center text-sm py-2 font-bold transition-all duration-300 hover:bg-gray-100 px-2 group">
-              <Link href="mailto:example@example.com?subject=Your Email Subject&body=Hello, this is the pre-filled body of the email." onClick={closeAllMenus} className='menu6 text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
+              <Link href="/contact" onClick={closeAllMenus} className='menu6 text-gray-400 no-underline transition-all duration-300 group-hover:text-blue-500'>
                 CONTACT US
               </Link>
             </li>

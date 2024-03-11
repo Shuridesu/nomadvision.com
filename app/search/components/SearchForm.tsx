@@ -79,7 +79,7 @@ export default function SearchForm() {
     <div>
       <div
         onClick={toggleShow}
-        className="fixed xl:absolute right-20 sm:right-32 top-8 xl:right-48 cursor-pointer hover:scale-110 duration-300 ease-in-out bg-white px-2 py-2 rounded-lg bg-opacity-40"
+        className="fixed xl:absolute right-48 top-8 translate-x-28 sm:translate-x-14 xl:translate-x-0 cursor-pointer hover:scale-110 duration-300 ease-in-out bg-white px-2 py-2 rounded-lg bg-opacity-40"
       >
         <Search />
       </div>

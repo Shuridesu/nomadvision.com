@@ -2,6 +2,7 @@ import Loading from "@/components/Loading";
 import Menu from "./components/Menu";
 import TryIcon from "../Icons/TryIcon";
 import JoinIcon from "../Icons/JoinIcon";
+import LoadingMotion from "../loading";
 
 export default async function page() {
   return (
@@ -12,7 +13,6 @@ export default async function page() {
           className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
           role="status"
         ></div>
-        <div className="text-gray-500 ms-2 mt-2">Loading...</div>
       </div>
       <div>
         <TryIcon/>
@@ -20,6 +20,10 @@ export default async function page() {
       <div>
         <JoinIcon/>
       </div>
+      <div>
+        <LoadingMotion/>
+      </div>
+      <button className="btn btn-primary">Button</button>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+
 import PostDetail from "./components/PostDetail";
 import { getAllPosts, getPost } from "@/lib/getPosts";
 import CommentForm from "./components/CommentForm";
@@ -40,16 +40,7 @@ export default async function PostPage({ params: { postSlug } }: Params) {
 
   return (
     <>
-      <Suspense
-        fallback={
-          <Loading/>
-        }
-      >
         <PostDetail promise={postData} user={user} postSlug={postSlug} />
-        
-
-        
-      </Suspense>
     </>
   );
 }
