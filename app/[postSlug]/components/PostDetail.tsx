@@ -270,7 +270,7 @@ export default async function PostDetail({ promise,user,postSlug }: Props) {
             <h1 className="ms-4 sm:ms-8 mb-2 font-semibold">SHARE THE POST</h1>
             <div className="flex ms-2 sm:ms-4">
               <Link
-                href={`https://twitter.com/intent/tweet?url=http://nomadvision-com.vercel.app/${post.post.slug}`}
+                href={`https://twitter.com/intent/tweet?url=https://nomadvision.org/${post.post.slug}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:scale-110 transition-transform duration-200"
@@ -278,13 +278,14 @@ export default async function PostDetail({ promise,user,postSlug }: Props) {
                 <TwitterIcon />
               </Link>
               <Link
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=http://nomadvision-com.vercel.app/${post.post.slug}`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://nomadvision.org/${post.post.slug}`}
                 className="hover:scale-110 transition-transform duration-200"
+                target="_blank"
               >
                 <LinkedIcon />
               </Link>
               <Link
-                href={`https://t.me/share/url?url=http://nomadvision-com.vercel.app/${post.post.slug}`}
+                href={`https://t.me/share/url?url=https://nomadvision.org/${post.post.slug}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:scale-110 transition-transform duration-200"
