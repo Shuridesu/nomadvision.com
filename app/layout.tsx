@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button'
 import SignUpButton from './components/SignUpButton'
 import Link from 'next/link'
 import UserButton from './components/UserButton'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,6 +31,9 @@ export default async function RootLayout(
   const user = await getAuthSession();
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalytics/>
+      </head>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
