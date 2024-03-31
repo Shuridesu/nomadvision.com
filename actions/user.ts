@@ -352,3 +352,66 @@ export const getArticlesBySearchQuery = async ({ query }: QueryProps) => {
   return posts
 }
 
+//google login
+
+//get google login url
+import axios from "axios";
+
+axios.defaults.withCredentials = true;
+
+import { AxiosRequestConfig } from "axios";
+      
+
+// 正しいURL形式でリクエストを行う
+export const getGoogleLoginUrl = async () => {
+  const options = {
+    headers: {
+      Accept: "application/json",
+      
+    },
+    withCredentials: true,
+  };
+
+  try {
+    const result = await axios.get(
+      `http://127.0.0.1:8000/api/auth/o/google-oauth2/?redirect_uri=http://127.0.0.1:3000/auth/google`,
+      options
+    );
+    if (!result.data) {
+      console.error(result.data.error);
+      return;
+    }
+    const loginUrl = result.data.authorization_url;
+    return loginUrl;
+  } catch (error) {
+    console.error(error);
+    return;
+  }
+};
+
+
+//get token from google
+export const getAccessToken = async (state: string, code: string) => {
+  const options = {
+    headers: {
+      Accept: "application/json",
+      "contentType": "application/x-www-form-urlencoded",
+      
+    },
+    withCredentials: true,
+    
+  };
+
+  const result = await axios.post(
+    `http://127.0.0.1:8000/api/auth/o/google-oauth2/?state=${encodeURIComponent(
+      state
+    )}&code=${encodeURIComponent(code)}`,
+    options
+  )
+  .then((res)=>{
+    return res.data
+  })
+  .catch((error)=>{
+    console.error(error);
+  });
+}

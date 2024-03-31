@@ -7,7 +7,6 @@ import LoadingMotion from "../loading";
 export default async function page() {
   return (
     <div className="">
-
       <div className="flex flex-col justify-center items-center h-[70vh]">
         <div
           className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
@@ -15,13 +14,13 @@ export default async function page() {
         ></div>
       </div>
       <div>
-        <TryIcon/>
+        <TryIcon />
       </div>
       <div>
-        <JoinIcon/>
+        <JoinIcon />
       </div>
       <div>
-        <LoadingMotion/>
+        <LoadingMotion />
       </div>
       <button className="btn btn-primary">Button</button>
     </div>
