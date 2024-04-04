@@ -23,6 +23,7 @@ export default async function page() {
         <LoadingMotion />
       </div>
       <button className="btn btn-primary">Button</button>
+      <p>aaa</p>
     </div>
   );
 }
