@@ -11,7 +11,7 @@ console.log(process.env.NEXT_PUBLIC_HOST)
 
 const mutex = new Mutex()
 const baseQuery = fetchBaseQuery({ 
-    baseUrl: `${process.env.NEXT_PUBLIC_HOST}/api`,
+    baseUrl: `${process.env.NEXT_PUBLIC_API_URL}/api`,
     credentials: 'include',
 });
 const baseQueryWithReauth: BaseQueryFn<
