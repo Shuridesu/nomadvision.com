@@ -1,0 +1,13 @@
+export {default as TrendsIcon} from './trendsIcon';
+export {default as ToolIcon} from './toolIcon';
+export {default as AnalyticsIcon} from './analyticsIcon';
+export {default as OtherIcon} from './otherIcon';
+export {default as SearchIcon} from './searchIcon';
+export {default as LogoIcon} from './logoIcon';
+export {default as PremiumIcon} from './premiumIcon';
+export {default as LatestIcon} from './latestIcon';
+export {default as TwitterIcon} from './twitterIcon';
+export {default as TelegramIcon} from './telegramIcon';
+export {default as LinkedInIcon} from './linkedInIcon';
+export {default as CopyIcon} from './copyIcon';
+export {default as TryIcon} from './tryIcon';

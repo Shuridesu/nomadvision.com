@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Navbar, Footer } from "@/components/common";
+import Provider from "@/redux/provider";
+import{ Setup }from "@/components/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Provider>
+          <Setup />
+          <div className="text-gray-800 bg-[url('/ai2.jpg')] bg-center sm:bg-cover bg-fixed">
+            <Navbar props="z-10 bg-opacity-0" />
+            <div className="">
+              {children}
+            </div>
+          </div>
+          <Footer />
+        </Provider>
+      </body>
     </html>
   );
 }
