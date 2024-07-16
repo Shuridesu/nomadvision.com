@@ -25,7 +25,7 @@ function ArticleCard({ articles }: Props) {
           />
           <div className="absolute inset-0 h-72 bg-gray-400 bg-opacity-0 group-hover:bg-opacity-60 transition duration-300"/>
           <div className="p-5 z-10">
-            <div className = "flex items-center gap-2 pb-4 text-gray-400 text-sm font-semibold">
+            <div className = "flex flex-wrap items-center gap-2 pb-4 text-gray-400 text-sm font-semibold bg-slate-300">
               {article.category.map((category) => (
                 <Link key={category.slug} href={`/tag/${category.slug}`} className = "rounded-lg px-2 py-1 hover:scale-105 border-2 border-gray-300 hover:border-indigo-400 hover:text-indigo-600 bg-white transition-all duration-100">
                   {category.name}
