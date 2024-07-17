@@ -8,8 +8,9 @@ interface Props {
 export default function page({params: {category}}: Props ) {
   return (
     <div>
-        <Banner>{category}</Banner>
-        <ArticleListByCategory category = {category}/>
+      <Banner>{category}</Banner>
+      <ArticleListByCategory category={category} />
+      <div className="h-10"></div>
     </div>
-  )
+  );
 }

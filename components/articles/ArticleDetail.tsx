@@ -34,7 +34,7 @@ const ArticleDetail = ({postSlug}:Props) => {
               <h2 className="font-bold text-4xl mt-12 lg:mt-4 translate-y-2 mb-4">
                 {post.post.title}
               </h2>
-              <div className="flex items-center gap-2 pt-2 text-gray-400 text-sm font-semibold">
+              <div className="flex flex-wrap items-center gap-2 pt-2 text-gray-400 text-sm font-semibold whitespace-normal break-words">
                 {post.post.category.map((category) => (
                   <Link
                     key={category.slug}
@@ -342,7 +342,7 @@ const ArticleDetail = ({postSlug}:Props) => {
                     width={500}
                     height={300}
                   />
-                  <div className="flex items-center gap-2 pb-4 text-gray-400 text-sm font-semibold">
+                  <div className="flex flex-wrap items-center gap-2 pb-4 text-gray-400 text-sm font-semibold">
                     {post.previous.category.map((category) => (
                       <Link
                         key={category.slug}
@@ -390,12 +390,12 @@ const ArticleDetail = ({postSlug}:Props) => {
                     width={500}
                     height={300}
                   />
-                  <div className="flex items-center gap-2 pb-4 text-gray-400 text-sm font-semibold">
+                  <div className="flex flex-wrap items-center gap-2 pb-4 text-gray-400 text-sm font-semibold whitespace-normal break-words">
                     {post.next.category.map((category) => (
                       <Link
                         key={category.slug}
                         href={`/tag/${category.slug}`}
-                        className="rounded-lg px-2 py-1 hover:scale-105 border-2 border-gray-300 hover:border-indigo-400 hover:text-indigo-600 bg-white transition-all duration-100"
+                        className="max-w-full rounded-lg px-2 py-1 hover:scale-105 border-2 border-gray-300 hover:border-indigo-400 hover:text-indigo-600 bg-white transition-all duration-100"
                       >
                         {category.name}
                       </Link>
