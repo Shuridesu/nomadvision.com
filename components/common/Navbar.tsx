@@ -123,7 +123,7 @@ export default function Navbar({ props }: Props) {
       <div className="flex items-center space-x-8">
         <button
           className={`${
-            isOpen ? "fixed flex top-1 right-4" : "flex"
+            isOpen ? "fixed flex top-1 right-4" : " flex fixed top-1 right-4"
           } z-20 lg:hidden items-center justify-center w-14 h-14 rounded-2xl border-2 bg-gray-800 bg-opacity-90 text-white`}
           onClick={() => {
             setOpen(!isOpen);
@@ -199,11 +199,11 @@ export default function Navbar({ props }: Props) {
             </Link>
           )}
         </div>
-        <div className="fixed bg-fixed bg-black bg-opacity-80  top-0 right-0  overflow-y-auto scrollbar-hide z-10">
+        <div className="fixed bg-fixed bg-black bg-opacity-80 top-0 right-0  overflow-y-auto scrollbar-hide z-10">
           <SideBar isOpen={isOpen} />
         </div>
       </div>
-      <div className="fixed top-4 right-24">
+      <div className="absolute top-4 right-24">
       <SearchForm />
       </div>
     </nav>
