@@ -27,7 +27,7 @@ function ArticleCard({ articles }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.slice(0, num).map((article) => (
           <Link
-            href={article.slug}
+            href={`/${article.slug}`}
             key={article.id}
             className="relative bg-white bg-opacity-80 shadow-lg rounded-lg overflow-hidden group transition duration-300 hover:shadow-2xl flex flex-col"
           >

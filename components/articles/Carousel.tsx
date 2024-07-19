@@ -6,11 +6,6 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
 
-interface Post {
-  title: string;
-  subtitle: string;
-  title_image: string;
-}
 
 interface Props {
   articles: Post[];
@@ -33,9 +28,9 @@ export default function Carousel({ articles }: Props) {
           <div className="embla__container flex h-full">
             {articles.map((article) => (
               <Link
-                href={article.title}
+                href={article.slug}
                 className="embla__slide flex-shrink-0 w-1/2 md:w-1/3 h-full relative mr-3 shadow-lg group"
-                key={article.title}
+                key={article.id}
               >
                 <img src={article.title_image} alt="" className="object-cover w-full h-full rounded-md" />
                 <div className="absolute inset-0 h-full bg-gray-400 bg-opacity-0 group-hover:bg-opacity-60 transition duration-300 rounded-md"/>
