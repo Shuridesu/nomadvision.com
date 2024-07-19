@@ -203,7 +203,7 @@ export default function Navbar({ props }: Props) {
           <SideBar isOpen={isOpen} />
         </div>
       </div>
-      <div className="absolute top-4 right-24">
+      <div className="absolute top-4 right-24 lg:right-32">
       <SearchForm />
       </div>
     </nav>
